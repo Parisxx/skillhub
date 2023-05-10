@@ -1,5 +1,6 @@
 <?php
-require('initialize.php'); 
+require('initialize.php');
+require('auth.php'); 
 session_start();
 ?>
 
