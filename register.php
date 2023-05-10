@@ -12,7 +12,6 @@ if (isset($_POST['submit'])) {
      
     if (!$_POST['firstname']) {
       echo"Name is required <br>";
-    //   $errName = 'Name is required';
      }
     if (!$email) {
         echo"Email is required <br>";
