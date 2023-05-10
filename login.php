@@ -1,3 +1,24 @@
+<?php
+
+require('initialize.php'); 
+session_start();
+if (isset($_POST['submit'])){
+    $email = mysqli_real_escape_string($db, $_POST['email']);
+    $password = mysqli_real_escape_string($db, $_POST['password']);
+        $query = "SELECT * FROM user WHERE email='$email'
+and password='".md5($password)."'";
+	$result = mysqli_query($db,$query) or die(mysql_error());
+	$rows = mysqli_num_rows($result);
+        if($rows==1){
+	    $_SESSION['email'] = $email;
+	    header("Location: index.php");
+         }else{
+	echo "Email/password is incorrect.";
+	}
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +28,12 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="text" name="fname" placeholder="First name">
-    <input type="text" name="lname" placeholder="Last name">
-    <input type="email" name="email" placeholder="Email">
-    <input type="password" name="pass" placeholder="Password">
+    <form method="post">
+        <input type="text" name="fname" placeholder="First name">
+        <input type="text" name="lname" placeholder="Last name">
+        <input type="email" name="email" placeholder="Email">
+        <input type="password" name="pass" placeholder="Password">
+        <input type="submit" value="Submit" name="submit">
+    </form>
 </body>
 </html>
