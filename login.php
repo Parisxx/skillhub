@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <input type="text" name="fname" placeholder="First name">
+    <input type="text" name="lname" placeholder="Last name">
+    <input type="email" name="email" placeholder="Email">
+    <input type="password" name="pass" placeholder="Password">
 </body>
 </html>
