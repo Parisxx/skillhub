@@ -1,7 +1,9 @@
 <?php
 require('initialize.php');
 require('auth.php'); 
-session_start();
+
+$query=mysqli_query($db,"SELECT * FROM user WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
+$row=mysqli_fetch_array($query);
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +15,6 @@ session_start();
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>Murge <?php echo $row['firstname'];  ?></h1>
 </body>
 </html>
