@@ -29,8 +29,6 @@ and password='".md5($password)."'";
 </head>
 <body>
     <form method="post">
-        <input type="text" name="fname" placeholder="First name">
-        <input type="text" name="lname" placeholder="Last name">
         <input type="email" name="email" placeholder="Email">
         <input type="password" name="password" placeholder="Password">
         <input type="submit" value="Submit" name="submit">
