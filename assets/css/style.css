@@ -2,3 +2,9 @@
     margin: 0;
     padding: 0;
 }
+
+.image {
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
+}

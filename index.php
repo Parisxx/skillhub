@@ -15,6 +15,13 @@ $row=mysqli_fetch_array($query);
     <title>Document</title>
 </head>
 <body>
+    <div class="nav">
+        <img src="assets/img/Skillhub.svg">
+        <a href="">Find Projects</a>
+        <a href="">Find Freelancers</a>
+        <i class="fa-light fa-bell"></i>
+        <img style="border-radius: 100%;" src="uploads/<?= $row['file_name']; ?>" alt="" class="image">
+    </div>
     <h1>Murge <?php echo $row['firstname'];  ?></h1>
     <a href="logout.php">Log out</a>
 </body>
