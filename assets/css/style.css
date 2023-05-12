@@ -46,5 +46,14 @@ body {
 
 .btn-link {
     height: 100%;
+    color: #757D8A;
+}
+
+.btn-link .active {
     color: #AB7FBC;
+}
+
+.active {
+    height: 100%;
+    border-bottom: 2px solid #AB7FBC;
 }
