@@ -3,8 +3,48 @@
     padding: 0;
 }
 
+body {
+    background-color: #f3f3f3;
+}
+
 .image {
     height: 50px;
     width: 50px;
     object-fit: contain;
+}
+
+.nav {
+    background-color: white;
+    position: relative;
+    height: 3.1rem;
+    justify-content: space-around;
+}
+
+.nav-logo {
+    left: 20;
+    position: absolute;
+    height: 100%;
+    margin-top: 5px;
+}
+
+.nav-links {
+    height: 100%;
+    text-decoration: none;
+}
+
+.nav-info {
+    position: absolute;
+    right: 20;
+    height: 100%;
+}
+.nav-info i {
+    margin-right: 20px;
+    font-size: 22px;
+    color: #888;
+    cursor: pointer;
+}
+
+.btn-link {
+    height: 100%;
+    color: #AB7FBC;
 }

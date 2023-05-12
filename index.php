@@ -12,15 +12,22 @@ $row=mysqli_fetch_array($query);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Document</title>
 </head>
 <body>
     <div class="nav">
-        <img src="assets/img/Skillhub.svg">
-        <a href="">Find Projects</a>
-        <a href="">Find Freelancers</a>
-        <i class="fa-light fa-bell"></i>
-        <img style="border-radius: 100%;" src="uploads/<?= $row['file_name']; ?>" alt="" class="image">
+        <div class="nav-logo">
+            <a href="index.php"><img src="assets/img/Skillhub.svg"></a>
+        </div>
+        <div class="nav-links">
+            <a href="" class="btn btn-link text-decoration-none">Find Projects</a>
+            <a href="" class="btn btn-link text-decoration-none">Find Freelancers</a>
+        </div>
+        <div class="nav-info">
+            <i class="fa-light fa-bell"></i>
+            <img style="border-radius: 100%;" src="assets/pfp/default.png" class="image">
+        </div>
     </div>
     <h1>Murge <?php echo $row['firstname'];  ?></h1>
     <a href="logout.php">Log out</a>
