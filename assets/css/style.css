@@ -7,6 +7,8 @@ body {
     background-color: #f3f3f3;
 }
 
+/* BEGIN NAVBAR */
+
 .image {
     height: 50px;
     width: 50px;
@@ -58,6 +60,9 @@ body {
     border-bottom: 2px solid #AB7FBC;
 }
 
+/* END NAVBAR */
+
+
 .maincontainer {
     display: flex;
     margin-left: 2rem;
@@ -67,14 +72,46 @@ body {
 }
 
 .col-sm-4 {
-    background-color: yellow;
-    height: 200vh;
+    position: relative;
 }
 
 .col-sm-3 {
-    background-color: green;
+    position: relative;
 }
 
 .col-sm-5 {
-    background-color: blue;
+    position: relative;
+}
+
+.filter-tab {
+    background-color: white;
+    height: 30rem;
+    border-radius: 13px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.project-tab {
+    background-color: white;
+    height: 10rem;
+    border-radius: 13px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.user-tab {
+    background-color: white;
+    height: 15rem;
+    border-radius: 13px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.experience-tab {
+    background-color: white;
+    height: 15rem;
+    border-radius: 13px;
+    margin-left: 10px;
+    margin-right: 10px;
 }

@@ -30,9 +30,24 @@ $row=mysqli_fetch_array($query);
         </div>
     </div>
     <div class="maincontainer">
-        <div class="col-sm-4">col-sm-4</div>
-        <div class="col-sm-5">col-sm-5</div>
-        <div class="col-sm-3">col-sm-3</div>
+        <div class="col-sm-4">
+            <div class="filter-tab">
+                dqwd
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="project-tab">
+                hefuui
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="user-tab">
+                eqwefeq
+            </div>
+            <div class="experience-tab">
+                hwui
+            </div>
+        </div>
     </div>
     <!-- <h1>Murge <?php echo $row['firstname'];  ?></h1>
     <a href="logout.php">Log out</a> -->
