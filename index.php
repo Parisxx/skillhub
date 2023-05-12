@@ -16,5 +16,6 @@ $row=mysqli_fetch_array($query);
 </head>
 <body>
     <h1>Murge <?php echo $row['firstname'];  ?></h1>
+    <a href="logout.php">Log out</a>
 </body>
 </html>
