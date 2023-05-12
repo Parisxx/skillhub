@@ -57,3 +57,24 @@ body {
     height: 100%;
     border-bottom: 2px solid #AB7FBC;
 }
+
+.maincontainer {
+    display: flex;
+    margin-left: 2rem;
+    margin-right: 4rem;
+    margin-top: 2rem;
+    gap: 20px;
+}
+
+.col-sm-4 {
+    background-color: yellow;
+    height: 200vh;
+}
+
+.col-sm-3 {
+    background-color: green;
+}
+
+.col-sm-5 {
+    background-color: blue;
+}

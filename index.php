@@ -29,7 +29,12 @@ $row=mysqli_fetch_array($query);
             <img style="border-radius: 100%;" src="assets/pfp/<?php echo $row['pfp'];?>" class="image">
         </div>
     </div>
-    <h1>Murge <?php echo $row['firstname'];  ?></h1>
-    <a href="logout.php">Log out</a>
+    <div class="maincontainer">
+        <div class="col-sm-4">col-sm-4</div>
+        <div class="col-sm-5">col-sm-5</div>
+        <div class="col-sm-3">col-sm-3</div>
+    </div>
+    <!-- <h1>Murge <?php echo $row['firstname'];  ?></h1>
+    <a href="logout.php">Log out</a> -->
 </body>
 </html>
