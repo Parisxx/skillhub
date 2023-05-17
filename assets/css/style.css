@@ -92,13 +92,7 @@ body {
     margin-right: 10px;
 }
 
-.project-tab {
-    background-color: #AB7FBC;
-    height: 10rem;
-    border-radius: 13px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
+/* BEGIN USER TAB */
 
 .user-tab {
     background-color: white;
@@ -109,17 +103,6 @@ body {
     margin-bottom: 20px;
     text-align: center;
 }
-
-.experience-tab {
-    background-color: white;
-    height: 15rem;
-    border-radius: 13px;
-    margin-left: 10px;
-    margin-right: 10px;
-    text-align: center;
-}
-
-/* BEGIN USER TAB */
 
 .user-tab h1 {
     font-size: 20px;
@@ -138,18 +121,44 @@ body {
     margin-top: 15px;
 }
 
+.btn-primary {
+    background-color: #AB7FBC;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #976aa9;
+}
+
 /* END USER TAB */
 
 /* BEGIN EXPERIENCE TAB */
-.experience-tab h1 {
+
+.experience-tab {
+    background-color: white;
+    position: relative;
+    border-radius: 13px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.experience-tab .experience-titel {
     font-size: 18px;
-    padding-top: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .kaas {
     margin-left: 15px;
     margin-right: 15px;
     display: flex;
+    margin-top: 10px;
+}
+
+.kaas h1 {
+    font-size: 18px;
 }
 
 .kaas2 p {
@@ -157,8 +166,8 @@ body {
 }
 
 .work-image {
-    height: 60px;
-    width: 60px;
+    height: 50px;
+    width: 50px;
     object-fit: contain;
     border-radius: 20%; 
     margin-right: 10px;
@@ -166,3 +175,50 @@ body {
 }
 
 /* END EXPERIENCE TAB */
+
+/* BEGIN PROJECT TAB */
+
+.project-tab {
+    background-color: #AB7FBC;
+    border-radius: 13px;
+    margin-left: 10px;
+    margin-right: 10px;
+    position: relative;
+}
+
+.project-container h1 {
+    font-size: 20px;
+    margin-top: 15px;
+    color: white;
+}
+
+.project-container h2 {
+    font-size: 15px;
+    margin-top: 15px;
+    color: rgb(228, 223, 223);
+}
+
+.form-control {
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.project-container {
+    padding: 20px;
+}
+
+.search input[type="text"] {
+    padding-left: 40px;
+}
+
+.search {
+    position: relative;
+}
+   
+.search i {
+    position: absolute;
+    left: 10px;
+    top: 2px;
+    padding: 9px 8px;
+}

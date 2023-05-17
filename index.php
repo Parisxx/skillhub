@@ -37,7 +37,14 @@ $row=mysqli_fetch_array($query);
         </div>
         <div class="col-sm-5">
             <div class="project-tab">
-                hefuui
+                <div class="project-container">
+                    <h1>Are you looking for a dream job?</h1>
+                    <h2>Skillhub is a place where you can find your dream job in various skills.<br>more than 10.000 jobs are available here</h2>
+                    <div class="search">
+                        <input type="text" class="form-control" placeholder="Search your dream job here">
+                        <i class="fa-light fa-magnifying-glass"></i>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col-sm-3">
@@ -48,12 +55,19 @@ $row=mysqli_fetch_array($query);
                 <a href="profile.php"><button class="btn btn-primary">Edit Profile</button></a>
             </div>
             <div class="experience-tab">
-                <h1>Work Experience</h1>
+                <h1 class="experience-titel">Work Experience</h1>
                 <div class="kaas">
                 <img src="assets/pfp/<?php echo $row['pfp'];?>" class="work-image">
                     <div class="kaas2">
                         <h1>Cheese-it</h1>
                         <p>Software Developer 1 year</p>
+                    </div>
+                </div>
+                <div class="kaas">
+                <img src="assets/pfp/<?php echo $row['pfp'];?>" class="work-image">
+                    <div class="kaas2">
+                        <h1>Secret Ninja's</h1>
+                        <p>Software Developer 2 years</p>
                     </div>
                 </div>
             </div>
