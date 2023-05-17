@@ -13,6 +13,7 @@ body {
     height: 50px;
     width: 50px;
     object-fit: contain;
+    border-radius: 100%; 
 }
 
 .nav {
@@ -92,7 +93,7 @@ body {
 }
 
 .project-tab {
-    background-color: white;
+    background-color: #AB7FBC;
     height: 10rem;
     border-radius: 13px;
     margin-left: 10px;
@@ -106,6 +107,7 @@ body {
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .experience-tab {
@@ -114,4 +116,21 @@ body {
     border-radius: 13px;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.user-tab h1 {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.user-tab p {
+    font-size: 13px;
+}
+
+.image2 {
+    height: 80px;
+    width: 80px;
+    object-fit: contain;
+    border-radius: 100%; 
+    margin-top: 15px;
 }

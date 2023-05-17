@@ -42,7 +42,10 @@ $row=mysqli_fetch_array($query);
         </div>
         <div class="col-sm-3">
             <div class="user-tab">
-                eqwefeq
+                <img src="assets/pfp/<?php echo $row['pfp'];?>" class="image2">
+                <h1>Joseph Kareem</h1>
+                <p>Software Developer - 2 years experience</p>
+                <a href="profile.php"><button class="btn btn-primary">Edit Profile</button></a>
             </div>
             <div class="experience-tab">
                 hwui
