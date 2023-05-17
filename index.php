@@ -26,7 +26,7 @@ $row=mysqli_fetch_array($query);
         </div>
         <div class="nav-info">
             <i class="fa-light fa-bell"></i>
-            <img style="border-radius: 100%;" src="assets/pfp/<?php echo $row['pfp'];?>" class="image">
+            <img src="assets/pfp/<?php echo $row['pfp'];?>" class="image">
         </div>
     </div>
     <div class="maincontainer">
@@ -43,16 +43,21 @@ $row=mysqli_fetch_array($query);
         <div class="col-sm-3">
             <div class="user-tab">
                 <img src="assets/pfp/<?php echo $row['pfp'];?>" class="image2">
-                <h1>Joseph Kareem</h1>
+                <h1><?php echo $row['firstname'];?> <?php echo $row['lastname'];?></h1>
                 <p>Software Developer - 2 years experience</p>
                 <a href="profile.php"><button class="btn btn-primary">Edit Profile</button></a>
             </div>
             <div class="experience-tab">
-                hwui
+                <h1>Work Experience</h1>
+                <div class="kaas">
+                <img src="assets/pfp/<?php echo $row['pfp'];?>" class="work-image">
+                    <div class="kaas2">
+                        <h1>Cheese-it</h1>
+                        <p>Software Developer 1 year</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <!-- <h1>Murge <?php echo $row['firstname'];  ?></h1>
-    <a href="logout.php">Log out</a> -->
 </body>
 </html>

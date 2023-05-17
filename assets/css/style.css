@@ -116,7 +116,10 @@ body {
     border-radius: 13px;
     margin-left: 10px;
     margin-right: 10px;
+    text-align: center;
 }
+
+/* BEGIN USER TAB */
 
 .user-tab h1 {
     font-size: 20px;
@@ -134,3 +137,32 @@ body {
     border-radius: 100%; 
     margin-top: 15px;
 }
+
+/* END USER TAB */
+
+/* BEGIN EXPERIENCE TAB */
+.experience-tab h1 {
+    font-size: 18px;
+    padding-top: 10px;
+}
+
+.kaas {
+    margin-left: 15px;
+    margin-right: 15px;
+    display: flex;
+}
+
+.kaas2 p {
+    font-size: 13px;
+}
+
+.work-image {
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+    border-radius: 20%; 
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+/* END EXPERIENCE TAB */
