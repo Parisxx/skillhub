@@ -51,7 +51,7 @@ $row=mysqli_fetch_array($query);
             <div class="user-tab">
                 <img src="assets/pfp/<?php echo $row['pfp'];?>" class="image2">
                 <h1><?php echo $row['firstname'];?> <?php echo $row['lastname'];?></h1>
-                <p>Software Developer - 2 years experience</p>
+                <p><?php echo $row['work'];?> - <?php echo "" . $row['year_xp'] . " year(s) experience";?></p>
                 <a href="profile.php"><button class="btn btn-primary">Edit Profile</button></a>
             </div>
             
