@@ -228,3 +228,7 @@ body {
     height: 100%;
     margin-left: 50%;
 }
+
+.modal-backdrop {
+    background-color: transparent;
+}
