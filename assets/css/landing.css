@@ -15,11 +15,10 @@ body {
     padding: 3%;
 }
 
-.landing{
-    background-color: white;
-    height: 30rem;
-    border-radius: 13px;
-    margin-left: 10px;
-    margin-right: 10px;
+
+.text{
+    text-align: center;
+    font-family: ;
+
 }
 
