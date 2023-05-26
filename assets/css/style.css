@@ -185,6 +185,8 @@ body {
     margin-left: 10px;
     margin-right: 10px;
     position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .project-container h1 {
@@ -230,5 +232,9 @@ body {
 }
 
 .modal-backdrop {
-    background-color: transparent;
+    background-color: #A1A3A5;
+}
+
+.modal-content {
+    border: none;
 }
