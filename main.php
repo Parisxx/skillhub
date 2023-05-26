@@ -32,7 +32,7 @@ $row=mysqli_fetch_array($query);
     <div class="maincontainer">
         <div class="col-sm-4">
             <div class="filter-tab">
-                dqwd
+                Filter
             </div>
         </div>
         <div class="col-sm-5">
