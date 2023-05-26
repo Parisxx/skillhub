@@ -18,7 +18,11 @@ body {
 
 .text{
     text-align: center;
-    font-family: ;
 
 }
 
+.buttons {
+    text-decoration: none;
+    color: #AB7FBC;
+    text-align: right;
+}

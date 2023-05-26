@@ -12,12 +12,11 @@ require('initialize.php');
     <link rel="stylesheet" href="assets/css/landing.css">
 </head>
 <body>
-    <div class="nav">
+    <div class="buttons">
+        <a href="login.php" class="btn btn-link text-decoration-none">Login</a>
+        <a href="register.php" class="btn btn-link text-decoration-none">Register</a>
+    </div>
 
-            <a href="" class="btn btn-link text-decoration-none"><div class="active">Find Projects</div></a>
-            <a href="" class="btn btn-link text-decoration-none">Find Freelancers</a>
-        </div>
-</div>
     <div class="logo">
         <a href="index.php"><img src="assets/img/logo.png"></a>
     </div>
