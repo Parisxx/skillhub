@@ -11,7 +11,7 @@ and password='".md5($password)."'";
 	$rows = mysqli_num_rows($result);
         if($rows==1){
 	    $_SESSION['email'] = $email;
-	    header("Location: index.php");
+	    header("Location: main.php");
          }else{
 	echo "Email/password is incorrect.";
 	}
