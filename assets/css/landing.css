@@ -19,9 +19,39 @@ body {
 
 .btn-link {
     text-decoration: none;
-    color: #AB7FBC;
+    background-color: #AB7FBC;
+    color: white;
+    margin-right: 1%;
 }
 
 .buttons {
     text-align: right;
+    padding: 1%;
+
+}
+
+.about{
+    background-color: white;
+    border-radius: 50px;
+    margin: auto;
+    display: block;
+    width: 800px;
+
+}
+
+.title{
+    text-align: center;
+}
+
+.text{
+    text-align: center;
+    margin-bottom: 2%;
+    box-shadow: 5%;
+    
+}
+
+.company{
+    width: 700px;
+    border-radius: 50px;
+    margin-bottom: 1%;
 }
