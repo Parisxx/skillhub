@@ -21,8 +21,11 @@ body {
 
 }
 
-.buttons {
+.btn-link {
     text-decoration: none;
     color: #AB7FBC;
+}
+
+.buttons {
     text-align: right;
 }
