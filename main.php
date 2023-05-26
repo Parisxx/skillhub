@@ -39,7 +39,7 @@ $row=mysqli_fetch_array($query);
             <div class="project-tab">
                 <div class="project-container">
                     <h1>Are you looking for a dream job?</h1>
-                    <h2>Skillhub is a place where you can find your dream job in various skills.<br>more than 10.000 jobs are available here</h2>
+                    <h2>Skillhub is a place where you can find your dream job in various skills.<br>More than 10.000 jobs are available here.</h2>
                     <div class="search">
                         <input type="text" class="form-control" placeholder="Search your dream job here">
                         <i class="fa-light fa-magnifying-glass"></i>
@@ -51,7 +51,7 @@ $row=mysqli_fetch_array($query);
             <div class="user-tab">
                 <img src="assets/pfp/<?php echo $row['pfp'];?>" class="image2">
                 <h1><?php echo $row['firstname'];?> <?php echo $row['lastname'];?></h1>
-                <p><?php echo $row['work'];?> - <?php echo "" . $row['year_xp'] . " year(s) experience";?></p>
+                <p><?php echo $row['work'];?> - <?php echo "" . $row['year_xp'] . " year(s) of experience";?></p>
                 <a href="profile.php"><button class="btn btn-primary">Edit Profile</button></a>
             </div>
             
