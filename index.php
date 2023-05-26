@@ -13,6 +13,10 @@ require('initialize.php');
 </head>
 <body>
     <div class="nav">
+
+            <a href="" class="btn btn-link text-decoration-none"><div class="active">Find Projects</div></a>
+            <a href="" class="btn btn-link text-decoration-none">Find Freelancers</a>
+        </div>
 </div>
     <div class="logo">
         <a href="index.php"><img src="assets/img/logo.png"></a>
