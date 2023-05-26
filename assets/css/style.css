@@ -20,19 +20,19 @@ body {
     background-color: white;
     position: relative;
     height: 3.1rem;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
-.nav-logo {
+.logo {
     left: 20;
     position: absolute;
     height: 100%;
-    margin-top: 5px;
 }
 
 .nav-links {
     height: 100%;
     text-decoration: none;
+    margin-right: 12rem;
 }
 
 .nav-info {
@@ -40,6 +40,7 @@ body {
     right: 20;
     height: 100%;
 }
+
 .nav-info i {
     margin-right: 20px;
     font-size: 22px;
