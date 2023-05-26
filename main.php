@@ -18,7 +18,7 @@ $row=mysqli_fetch_array($query);
 <body>
     <div class="nav">
         <div class="nav-logo">
-            <a href="index.php"><img src="assets/img/Skillhub.svg"></a>
+            <a href="main.php"><img src="assets/img/Skillhub.svg"></a>
         </div>
         <div class="nav-links">
             <a href="" class="btn btn-link text-decoration-none"><div class="active">Find Projects</div></a>
