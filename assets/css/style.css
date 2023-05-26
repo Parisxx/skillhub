@@ -223,3 +223,8 @@ body {
     top: 2px;
     padding: 9px 8px;
 }
+
+.logo_landing{
+    height: 100%;
+    margin-left: 50%;
+}
