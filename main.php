@@ -54,23 +54,7 @@ $row=mysqli_fetch_array($query);
                 <p>Software Developer - 2 years experience</p>
                 <a href="profile.php"><button class="btn btn-primary">Edit Profile</button></a>
             </div>
-            <div class="experience-tab">
-                <h1 class="experience-titel">Work Experience</h1>
-                <div class="kaas">
-                <img src="assets/pfp/<?php echo $row['pfp'];?>" class="work-image">
-                    <div class="kaas2">
-                        <h1>Cheese-it</h1>
-                        <p>Software Developer 1 year</p>
-                    </div>
-                </div>
-                <div class="kaas">
-                <img src="assets/pfp/<?php echo $row['pfp'];?>" class="work-image">
-                    <div class="kaas2">
-                        <h1>Secret Ninja's</h1>
-                        <p>Software Developer 2 years</p>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
 </body>
