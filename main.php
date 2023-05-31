@@ -7,6 +7,8 @@ $row2=mysqli_fetch_array($query);
 
 $query2=mysqli_query($db,"SELECT * FROM project_post")or die(mysqli_error());
 
+
+
 if(isset($_POST['submit'])){
 
     $email = $_SESSION['email'];
@@ -27,6 +29,34 @@ if(isset($_POST['submit'])){
     }
 }
 
+function timeElapsedString($datetime, $full = false) {
+    $now = new DateTime;
+    $ago = new DateTime($datetime);
+    $diff = $now->diff($ago);
+
+    $diff->w = floor($diff->d / 7);
+    $diff->d -= $diff->w * 7;
+
+    $string = array(
+        'y' => 'year',
+        'm' => 'month',
+        'w' => 'week',
+        'd' => 'day',
+        'h' => 'hour',
+        'i' => 'minute',
+        's' => 'second',
+    );
+    foreach ($string as $k => &$v) {
+        if ($diff->$k) {
+            $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
+        } else {
+            unset($string[$k]);
+        }
+    }
+
+    if (!$full) $string = array_slice($string, 0, 1);
+    return $string ? implode(', ', $string) . ' ago' : 'just now';
+}
 ?>
 
 <!DOCTYPE html>
@@ -101,6 +131,10 @@ if(isset($_POST['submit'])){
                 <div class="project-container2">
                     <h1 style="color: black;"><?php echo $row['title']; ?></h1>
                     <h2 style="color: black;"><?php echo $row['descr']; ?></h2>
+                    Posted
+                    <?php $datetime = $row['created'];
+                    echo timeElapsedString($datetime);?>
+                    
                 </div>
             </div>
             <?php

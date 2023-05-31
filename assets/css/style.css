@@ -161,13 +161,11 @@ body {
 .project-container2 h1 {
     font-size: 20px;
     margin-top: 15px;
-    color: white;
 }
 
 .project-container2 h2 {
     font-size: 15px;
     margin-top: 15px;
-    color: rgb(228, 223, 223);
 }
 
 .project-container h1 {
@@ -182,7 +180,7 @@ body {
     color: rgb(228, 223, 223);
 }
 
-.form-control {
+.search .form-control {
     border-radius: 15px;
     margin-top: 20px;
     margin-bottom: 10px;
