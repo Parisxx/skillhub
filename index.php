@@ -23,10 +23,10 @@ require('initialize.php');
     </div>
     <div class="text">
          <h3 class="title">About us</h3>
-         <p>Welkom bij Skillhub, het toonaangevende platform voor het verbinden van bedrijven met getalenteerde freelancers. Bij ons draait alles om het vervullen van de behoeften van zowel werkgevers als freelancers in de wereld van projectmatig werk. </p>
+         <p>Welcome to Skillhub, the leading platform for connecting businesses with talented freelancers. We are all about meeting the needs of both employers and freelancers in the world of project work.</p>
          <img class="company" src="assets/img/bedrijf.png">
-         <p>Als zelfgestart bedrijf hebben we met passie en toewijding gewerkt aan de ontwikkeling van dit innovatieve concept. Ons doel is om een platform te creëren dat de manier waarop bedrijven hun freelance talent vinden en inhuren revolutioneert.</p>
-         <p>We begrijpen dat elk bedrijf uniek is en specifieke expertise vereist. Daarom bieden wij een breed scala aan freelance professionals met diverse vaardigheden en ervaringsniveaus. Of je nu een start-up bent die extra ondersteuning nodig heeft of een gevestigd bedrijf dat tijdelijk expertise zoekt, ons platform is ontworpen om aan al je eisen te voldoen.</p>
+         <p>As a self-started company, we have worked with passion and dedication on the development of this innovative concept. Our goal is to create a platform that revolutionizes the way companies find and hire their freelance talent.</p>
+         <p>We understand that every business is unique and requires specific expertise. That's why we offer a wide range of freelance professionals with various skills and experience levels. Whether you are a start-up that needs extra support or an established company that is looking for temporary expertise, our platform is designed to meet all your requirements.</p>
          <br>
     </div>
 </div>
