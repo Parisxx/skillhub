@@ -23,8 +23,7 @@ if(isset($_POST['submit'])){
     $result = mysqli_query($db, $run) or die(mysqli_error($db));
     
     if($result) {
-        // header('Location: success?order='.$order.''); 
-        echo"gelukt";
+        header('Location: main.php'); 
     }
 }
 
