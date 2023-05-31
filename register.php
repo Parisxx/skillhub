@@ -53,10 +53,10 @@ if (isset($_POST['submit'])) {
 <body>
     <h1 class="text-center">Register</h1>
     <form method="post">
-        <input type="text" class="form-control" name="firstname" placeholder="Firstname">
-        <input type="text" class="form-control" name="lastname" placeholder="Lastname">
-        <input type="email" class="form-control" name="email" placeholder="Email">
-        <input type="password" class="form-control" name="password" placeholder="Password">
+        <input type="text" class="form-control" name="firstname" placeholder="Firstname" required>
+        <input type="text" class="form-control" name="lastname" placeholder="Lastname" required>
+        <input type="email" class="form-control" name="email" placeholder="Email" required>
+        <input type="password" class="form-control" name="password" placeholder="Password" required>
         <button type="submit" class="btn btn-primary" name="submit">Submit</button>
     </form>
 </html>

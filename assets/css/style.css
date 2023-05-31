@@ -21,6 +21,9 @@ body {
     position: relative;
     height: 3.1rem;
     justify-content: space-evenly;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 .logo {
@@ -91,6 +94,8 @@ body {
     border-radius: 13px;
     margin-left: 10px;
     margin-right: 10px;
+    position: sticky;
+    top: 80;
 }
 
 /* BEGIN USER TAB */
@@ -103,6 +108,8 @@ body {
     margin-right: 10px;
     margin-bottom: 20px;
     text-align: center;
+    position: sticky;
+    top: 80;
 }
 
 .user-tab h1 {
@@ -133,50 +140,6 @@ body {
 
 /* END USER TAB */
 
-/* BEGIN EXPERIENCE TAB */
-
-.experience-tab {
-    background-color: white;
-    position: relative;
-    border-radius: 13px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.experience-tab .experience-titel {
-    font-size: 18px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.kaas {
-    margin-left: 15px;
-    margin-right: 15px;
-    display: flex;
-    margin-top: 10px;
-}
-
-.kaas h1 {
-    font-size: 18px;
-}
-
-.kaas2 p {
-    font-size: 13px;
-}
-
-.work-image {
-    height: 50px;
-    width: 50px;
-    object-fit: contain;
-    border-radius: 20%; 
-    margin-right: 10px;
-    margin-left: 10px;
-}
-
-/* END EXPERIENCE TAB */
-
 /* BEGIN PROJECT TAB */
 
 .project-tab {
@@ -185,8 +148,26 @@ body {
     margin-left: 10px;
     margin-right: 10px;
     position: relative;
-    margin-top: 20px;
     margin-bottom: 20px;
+    overflow-wrap: break-word;
+    position: sticky;
+    top: 80;
+}
+
+.project-container {
+    z-index: 999;
+}
+
+.project-container2 h1 {
+    font-size: 20px;
+    margin-top: 15px;
+    color: white;
+}
+
+.project-container2 h2 {
+    font-size: 15px;
+    margin-top: 15px;
+    color: rgb(228, 223, 223);
 }
 
 .project-container h1 {
@@ -207,7 +188,7 @@ body {
     margin-bottom: 10px;
 }
 
-.project-container {
+.project-container2, .project-container {
     padding: 20px;
 }
 
