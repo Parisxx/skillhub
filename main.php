@@ -63,14 +63,10 @@ if(isset($_POST['submit'])){
       </div>
       <div class="modal-body">
         <form method="post" enctype="multipart/form-data">
-          <div class="mb-3">
             <label for="recipient-name" class="col-form-label" name="title">Title:</label>
             <input type="text" class="form-control" id="recipient-name" name="title">
-          </div>
-          <div class="mb-3">
             <label for="message-text" class="col-form-label" name="descr">Description:</label>
             <textarea class="form-control" id="message-text" name="descr"></textarea>
-          </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -102,7 +98,7 @@ if(isset($_POST['submit'])){
             while($row = mysqli_fetch_array($query2)) {
         ?>
             <div class="project-tab" style="background-color: white;">
-                <div class="project-container">
+                <div class="project-container2">
                     <h1 style="color: black;"><?php echo $row['title']; ?></h1>
                     <h2 style="color: black;"><?php echo $row['descr']; ?></h2>
                 </div>
