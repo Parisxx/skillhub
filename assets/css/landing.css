@@ -24,6 +24,11 @@ body {
     margin-right: 1%;
 }
 
+.btn-link:active {
+    background-color: #AB7FBC;
+    color: white;
+}
+
 .buttons {
     text-align: right;
     padding: 1%;
