@@ -40,16 +40,16 @@ and password='".md5($password)."'";
               <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
               <p class="text-white-50 mb-5">Please enter your login and password!</p>
            
-              <form>
+              <form method="post">
                 <div class="form-row">
                  <div class="form-group col-md-12 mb-4">
-                 <input type="email" class="form-control" id="email" placeholder="Email">
+                 <input name="email"type="email" class="form-control" id="email" placeholder="Email">
                  </div>
                  <div class="form-group col-md-12 mb-4  ">
-                 <input type="password" class="form-control" id="password" placeholder="Password">
+                 <input name="password" type="password" class="form-control" id="password" placeholder="Password">
                  </div>
                 </div>
-                <input type="submit" value="Submit" name="submit">
+                <input name="submit" type="submit" value="Submit" name="submit">
 
               </form>
             </div>
