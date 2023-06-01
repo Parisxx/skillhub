@@ -13,8 +13,8 @@ require('initialize.php');
 </head>
 <body>
     <div class="buttons">
-        <a href="login.php" class="btn btn-link text-decoration-none">Login</a>
-        <a href="register.php" class="btn btn-link text-decoration-none">Register</a>
+        <a href="login.php" class="btn btn-link">Login</a>
+        <a href="register.php" class="btn btn-link">Register</a>
     </div>
 
 <div class="about">

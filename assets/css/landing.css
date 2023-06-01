@@ -24,10 +24,14 @@ body {
     margin-right: 1%;
 }
 
-.btn-link:active {
+.btn-link:hover {
+    color: rgb(44, 46, 135);
     background-color: #AB7FBC;
-    color: white;
+
 }
+
+
+
 
 .buttons {
     text-align: right;
