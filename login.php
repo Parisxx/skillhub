@@ -30,38 +30,48 @@ and password='".md5($password)."'";
 <body>
 
 
-<section class="vh-100 gradient-custom">
+<!-- <section class="vh-100 gradient-custom">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
         <div class="card form-main text-white" style="border-radius: 1rem;">
-          <div class="card-body p-5 text-center">
-            <div class="mb-md-5 mt-md-4 pb-5">
+            <div class="card-body p-5 text-center">
+                 <div class="mb-md-5 mt-md-4 pb-5">
               <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
               <p class="text-white-50 mb-5">Please enter your login and password!</p>
            
-              <form>
+              <form method="post">
                 <div class="form-row">
                  <div class="form-group col-md-12 mb-4">
-                 <input type="email" class="form-control" id="email" placeholder="Email">
+                 <input name="email" type="email" class="form-control" id="email" placeholder="Email">
                  </div>
                  <div class="form-group col-md-12 mb-4  ">
-                 <input type="password" class="form-control" id="password" placeholder="Password">
+                 <input name="password" type="password" class="form-control" id="password" placeholder="Password">
                  </div>
                 </div>
                 <input type="submit" value="Submit" name="submit">
 
               </form>
-            </div>
 
+
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</section> -->
+
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <form method="post">
+            <input type="email" name="email" placeholder="Email">
+            <input type="password" name="password" placeholder="Password">
+            <input type="submit" value="Submit" name="submit">
+        </form>
+    </div>
 </section>
-
-
 
 </body>
 </html>
