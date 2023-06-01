@@ -52,12 +52,46 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="assets/css/register.css">
 </head>
 <body>
-    <h1 class="text-center">Register</h1>
-    <form method="post">
-        <input type="text" class="form-control" name="firstname" placeholder="Firstname" required>
-        <input type="text" class="form-control" name="lastname" placeholder="Lastname" required>
-        <input type="email" class="form-control" name="email" placeholder="Email" required>
-        <input type="password" class="form-control" name="password" placeholder="Password" required>
-        <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+     <section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card form-main text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+            <div class="mb-md-5 mt-md-4 pb-5">
+              <h2 class="fw-bold mb-2 text-uppercase">Register</h2>
+              <p class="text-white-50 mb-5">Please enter your fullname and Email</p>
+
+              <form method="post">
+                <div class="form-row">
+                <div class="form-group col-md-12 mb-4">
+                 <input name="lastname"type="lastname" class="form-control" id="lastname" placeholder="lastname">
+                 </div>
+                 <div class="form-group col-md-12 mb-4  ">
+                 <input name="firstname" type="firstname" class="form-control" id="firstname" placeholder="firstname">
+                 <div class="form-group col-md-12 mb-4">
+                 <input name="email"type="email" class="form-control" id="email" placeholder="Email">
+                 </div>
+                 <div class="form-group col-md-12 mb-4  ">
+                 <input name="password" type="password" class="form-control" id="password" placeholder="Password">
+                 </div>
+                </div>
+                <input name="submit" type="submit" value="Submit" name="submit">
+
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
     </form>
 </html>
