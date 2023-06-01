@@ -46,7 +46,7 @@ and password='".md5($password)."'";
               <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
               <p class="text-white-50 mb-5">Please enter your login and password!</p>
 
-              <div class="form-outline form-white mb-4">
+              <div class="email">
                 <input type="email" id="typeEmailX" class="form-control form-control-lg" />
                 <label class="form-label" for="typeEmailX">Email</label>
               </div>
