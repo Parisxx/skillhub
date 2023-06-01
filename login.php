@@ -24,7 +24,7 @@ and password='".md5($password)."'";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/Login.css">
+    <link rel="stylesheet" href="assets/css/login-register.css">
     <title>Skillhub | Login</title>
 </head>
 <body>
@@ -49,7 +49,7 @@ and password='".md5($password)."'";
                  <input name="password" type="password" class="form-control" id="password" placeholder="Password">
                  </div>
                 </div>
-                <input name="submit" type="submit" value="Submit" name="submit">
+                <input id="button" class="btn btn-primary" name="submit" type="submit" value="Login" name="submit">
 
               </form>
             </div>

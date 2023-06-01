@@ -4,3 +4,11 @@
 .form-main{ 
     background-color: #AB7FBC !important;
 }
+
+#button{
+    background-color: #AB7FBC;
+    border-color: white;
+    border-width: 2px;
+
+}
+
