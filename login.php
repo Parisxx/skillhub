@@ -29,23 +29,23 @@ and password='".md5($password)."'";
 </head>
 <body>
     <form method="post">
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="submit" value="Submit" name="submit">
+        <input type="email" name="email" placeholder="Email" class="password">
+        <input type="password" name="password" placeholder="Password" class="password">
+        <input type="submit" value="Submit" name="submit" class="submit">
     </form>
 
     <div class="screen-1"><svg class="logo" xmlns="assets/img/logo.png"  version="1.1" width="300" height="300" viewbox="0 0 640 480" xml:space="preserve">
-    <div class="email"><label for="email">Email Address</label>
+    <div namespace="email"><label for="email">Email Address</label>
         <div class="sec-2">
-            <ion-icon name="mail-outline"></ion-icon><input type="email" name="email" placeholder="Username@gmail.com" />
+            <ion-icon name="mail"></ion-icon><input type="email" name="email" placeholder="Username@gmail.com" />
         </div>
     </div>
     <div class="password"><label for="password">Password</label>
         <div class="sec-2">
-            <ion-icon name="lock-closed-outline"></ion-icon><input class="pas" type="password" name="password" placeholder="············" />
+            <ion-icon name="lock-closed-outline"></ion-icon><input class="password" type="password" name="password" placeholder="············" />
             <ion-icon class="show-hide" name="eye-outline"></ion-icon>
         </div>
-    </div><button class="login">Login </button>
+    </div><button class="submit">Login </button>
     <div class="footer"><span>Sign up</span><span>Forgot Password?</span></div>
 </div>
 
