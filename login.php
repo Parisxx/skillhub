@@ -29,7 +29,7 @@ and password='".md5($password)."'";
 </head>
 <body>
     <form method="post">
-        <input type="email" name="email" placeholder="Email" class="password">
+        <input type="email" name="email" placeholder="Email" class="email">
         <input type="password" name="password" placeholder="Password" class="password">
         <input type="submit" value="Submit" name="submit" class="submit">
     </form>
@@ -47,12 +47,12 @@ and password='".md5($password)."'";
               <p class="text-white-50 mb-5">Please enter your login and password!</p>
 
               <div class="form-outline form-white mb-4">
-                <input type="email" id="typeEmailX" class="form-control form-control-lg" />
+                <input type="email" id="typeEmailX" class="email" />
                 <label class="form-label" for="typeEmailX">Email</label>
               </div>
 
               <div class="form-outline form-white mb-4">
-                <input type="password" id="typePasswordX" class="form-control form-control-lg" />
+                <input type="password" id="typePasswordX" class="password" />
                 <label class="form-label" for="typePasswordX">Password</label>
               </div>
 
