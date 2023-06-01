@@ -34,7 +34,7 @@ and password='".md5($password)."'";
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-        <div class="card bg-danger text-white" style="border-radius: 1rem;">
+        <div class="card form-main text-white" style="border-radius: 1rem;">
           <div class="card-body p-5 text-center">
             <div class="mb-md-5 mt-md-4 pb-5">
               <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
@@ -42,12 +42,10 @@ and password='".md5($password)."'";
            
               <form>
                 <div class="form-row">
-                 <div class="form-group col-md-12">
-                  <label for="email">Email</label>
+                 <div class="form-group col-md-12 mb-4">
                  <input type="email" class="form-control" id="email" placeholder="Email">
                  </div>
-                 <div class="form-group col-md-12">
-                 <label for="password">Password</label>
+                 <div class="form-group col-md-12 mb-4  ">
                  <input type="password" class="form-control" id="password" placeholder="Password">
                  </div>
                 </div>
