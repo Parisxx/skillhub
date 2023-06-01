@@ -34,21 +34,26 @@ and password='".md5($password)."'";
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-        <div class="card bg-#AB7FBC text-white" style="border-radius: 1rem;">
+        <div class="card bg-danger text-white" style="border-radius: 1rem;">
           <div class="card-body p-5 text-center">
             <div class="mb-md-5 mt-md-4 pb-5">
               <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
               <p class="text-white-50 mb-5">Please enter your login and password!</p>
-
-              <form method="post">
-                <input type="email" name="email" placeholder="Email" class="email">
-                <label class="form-label" for="email">Email</label>
-                <input type="password" name="password" placeholder="Password" class="password">
-                <label class="form-label" for="password">Password</label>
-            </div>
+           
+              <form>
+                <div class="form-row">
+                 <div class="form-group col-md-12">
+                  <label for="email">Email</label>
+                 <input type="email" class="form-control" id="email" placeholder="Email">
+                 </div>
+                 <div class="form-group col-md-12">
+                 <label for="password">Password</label>
+                 <input type="password" class="form-control" id="password" placeholder="Password">
+                 </div>
+                </div>
 
               <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
-              <input type="submit" value="Submit" name="submit" class="submit">
+              <button type="submit" class="submit">Login</button>
               </form>
             </div>
             <div>
