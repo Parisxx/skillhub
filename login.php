@@ -28,11 +28,7 @@ and password='".md5($password)."'";
     <title>Document</title>
 </head>
 <body>
-    <form method="post">
-        <input type="email" name="email" placeholder="Email" class="email">
-        <input type="password" name="password" placeholder="Password" class="password">
-        <input type="submit" value="Submit" name="submit" class="submit">
-    </form>
+
 
     <section class="vh-100 gradient-custom">
   <div class="container py-5 h-100">
@@ -46,20 +42,18 @@ and password='".md5($password)."'";
               <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
               <p class="text-white-50 mb-5">Please enter your login and password!</p>
 
-              <div class="email">
-                <input type="email" id="typeEmailX" class="form-control form-control-lg" />
-                <label class="form-label" for="typeEmailX">Email</label>
-              </div>
-
-              <div class="form-outline form-white mb-4">
-                <input type="password" id="typePasswordX" class="form-control form-control-lg" />
-                <label class="form-label" for="typePasswordX">Password</label>
+              <form method="post">
+                <input type="email" name="email" placeholder="Email" class="email">
+                <label class="form-label" for="email">Email</label>
+              
+                <input type="password" name="password" placeholder="Password" class="password">
+                <label class="form-label" for="password">Password</label>
               </div>
 
               <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
 
-              <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
-
+              <input type="submit" value="Submit" name="submit" class="submit">
+              </form>
             </div>
 
             <div>
