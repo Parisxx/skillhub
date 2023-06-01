@@ -60,15 +60,16 @@ if (isset($_POST['submit'])) {
           <div class="card-body p-5 text-center">
             <div class="mb-md-5 mt-md-4 pb-5">
               <h2 class="fw-bold mb-2 text-uppercase">Register</h2>
-              <p class="text-white-50 mb-5">Please enter your fullname and Email</p>
+              <p class="text-white-50 mb-5">Please enter your fullname and Email!</p>
 
               <form method="post">
                 <div class="form-row">
                 <div class="form-group col-md-12 mb-4">
-                 <input name="lastname"type="lastname" class="form-control" id="lastname" placeholder="lastname">
+                 <input name="firstname"type="firstname" class="form-control" id="firstname" placeholder="firstname">
                  </div>
                  <div class="form-group col-md-12 mb-4  ">
-                 <input name="firstname" type="firstname" class="form-control" id="firstname" placeholder="firstname">
+                 <input name="lastname" type="lastname" class="form-control" id="lastname" placeholder="lastname">
+                 </div>
                  <div class="form-group col-md-12 mb-4">
                  <input name="email"type="email" class="form-control" id="email" placeholder="Email">
                  </div>
@@ -76,7 +77,7 @@ if (isset($_POST['submit'])) {
                  <input name="password" type="password" class="form-control" id="password" placeholder="Password">
                  </div>
                 </div>
-                <input name="submit" type="submit" value="Submit" name="submit">
+                <input id="button" class="btn btn-primary" name="submit" type="submit" value="Submit" name="submit">
 
               </form>
             </div>
