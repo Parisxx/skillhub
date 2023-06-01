@@ -49,14 +49,9 @@ and password='".md5($password)."'";
                  <input name="password" type="password" class="form-control" id="password" placeholder="Password">
                  </div>
                 </div>
+                <input type="submit" value="Submit" name="submit">
 
-              <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
-              <input name="sumbit" type="submit" class="form-control">Login</input>
               </form>
-            </div>
-            <div>
-              <p class="mb-0">Don't have an account? <a href="#!" class="text-white-50 fw-bold">Sign Up</a>
-              </p>
             </div>
 
           </div>
@@ -65,6 +60,12 @@ and password='".md5($password)."'";
     </div>
   </div>
 </section>
+
+<form method="post">
+        <input type="email" name="email" placeholder="Email">
+        <input type="password" name="password" placeholder="Password">
+        <input type="submit" value="Submit" name="submit">
+    </form>
 
 </body>
 </html>
