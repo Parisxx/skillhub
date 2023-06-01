@@ -51,7 +51,7 @@ and password='".md5($password)."'";
                 </div>
 
               <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
-              <button type="submit" class="submit">Login</button>
+              <button type="submit" class="form-control">Login</button>
               </form>
             </div>
             <div>
