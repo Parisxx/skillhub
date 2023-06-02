@@ -258,5 +258,29 @@ body {
     top: 26%;
 }
 
+#edit{
+    position: absolute;
+    left: 85%;
+    top: 30%;
+}
 
+.about_container{
+    position: absolute;
+
+    width: 60%;
+    height: 50%;
+
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-top: 20px;
+
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+.skill_container{
+
+}
 

@@ -36,7 +36,16 @@ $row2=mysqli_fetch_array($query);
 <img src="assets/pfp/<?php echo $row2['pfp'];?>" class="profile_image">
 <h1 class="profile_text_big"> <?php echo $row2['firstname'];?> <?php echo $row2['lastname'];?> </h1>
 <p class="profile_text_small"> <?php echo $row2['work'];?> - <?php echo $row2['year_xp'];?> year(s) of experience </p>
+<a href="profile_edit.php"><button id="edit" class="btn btn-primary">Edit Profile</button></a>
 </div>
+
+<div class="about_container">
+
+</div>
+
+<!-- <div class="skill_container">
+
+</div> -->
 
 </body>
 </html>
