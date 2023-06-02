@@ -26,11 +26,17 @@ $row2=mysqli_fetch_array($query);
             <a href="" class="btn btn-link text-decoration-none">Find Freelancers</a>
         </div>
         <div class="nav-info">
-            <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="test"><i class="fa-light fa-plus"></i></a>
             <i class="fa-light fa-bell"></i>
             <a href="profile.php"><img src="assets/pfp/<?php echo $row2['pfp'];?>" class="image"></a>
         </div>
     </div>
+
+<!-- profile -->
+<div class="profile_container">
+<img src="assets/pfp/<?php echo $row2['pfp'];?>" class="profile_image">
+<h1 class="profile_text_big"> <?php echo $row2['firstname'];?> <?php echo $row2['lastname'];?> </h1>
+<p class="profile_text_small"> <?php echo $row2['work'];?> - <?php echo $row2['year_xp'];?> year(s) of experience </p>
+</div>
 
 </body>
 </html>
