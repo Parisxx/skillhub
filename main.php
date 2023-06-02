@@ -80,7 +80,7 @@ function timeElapsedString($datetime, $full = false) {
         <div class="nav-info">
             <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="test"><i class="fa-light fa-plus"></i></a>
             <i class="fa-light fa-bell"></i>
-            <img src="assets/pfp/<?php echo $row2['pfp'];?>" class="image">
+            <a href="profile.php"><img src="assets/pfp/<?php echo $row2['pfp'];?>" class="image"></a>
         </div>
     </div>
     <!-- Modal -->
@@ -143,10 +143,10 @@ function timeElapsedString($datetime, $full = false) {
         </div>
         <div class="col-sm-3">
             <div class="user-tab">
-                <img src="assets/pfp/<?php echo $row2['pfp'];?>" class="image2">
+                <a href="profile.php"><img src="assets/pfp/<?php echo $row2['pfp'];?>" class="image2"></a>
                 <h1><?php echo $row2['firstname'];?> <?php echo $row2['lastname'];?></h1>
                 <p><?php echo $row2['work'];?> - <?php echo "" . $row2['year_xp'] . " year(s) of experience";?></p>
-                <a href="profile.php"><button class="btn btn-primary">Edit Profile</button></a>
+                <a href="profile_edit.php"><button class="btn btn-primary">Edit Profile</button></a>
             </div>
             
         </div>
