@@ -129,11 +129,12 @@ function timeElapsedString($datetime, $full = false) {
                 <div class="project-container2">
                     <div class="project-info">
                         <img src="assets/pfp/<?php echo $row2['pfp'];?>" class="image-post">
-                        <!-- <h1 style="color: black;"><?php echo $row['title']; echo "<br />"; echo  $row['sort_job']; echo" • $"; echo  $row['min_salary']; echo" - $"; echo  $row['max_salary']; ?> -->
 
-                        <p><?php echo $row['title']; echo '<br />';?></p>
+                        <h1 style="color: black;"><?php echo $row['title']; echo "<br />";?>
                         <p><?php  echo $row['sort_job']; echo" • $"; echo  $row['min_salary']; echo" - $"; echo  $row['max_salary']; ?> </p>
                         </br>
+
+
                     </div>
                     <h2><?php echo $row['descr']; ?></h2>
                     <div class="date_posted">
