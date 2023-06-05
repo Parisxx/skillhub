@@ -153,9 +153,7 @@ body {
 }
 
 .project-info {
-    background-color: yellow;
     display: flex;
-    height: 5rem;
 }
 
 .project-info p {
