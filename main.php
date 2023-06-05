@@ -94,9 +94,9 @@ function timeElapsedString($datetime, $full = false) {
       <div class="modal-body">
         <form method="post" enctype="multipart/form-data">
             <label for="recipient-name" class="col-form-label" name="title">Title:</label>
-            <input type="text" class="form-control" id="recipient-name" name="title">
+            <input type="text" class="form-control" id="recipient-name" name="title" required>
             <label for="message-text" class="col-form-label" name="descr">Description:</label>
-            <textarea class="form-control" id="message-text" name="descr"></textarea>
+            <textarea class="form-control" id="message-text" name="descr" required></textarea>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -129,7 +129,10 @@ function timeElapsedString($datetime, $full = false) {
         ?>
             <div class="project-tab" style="background-color: white;">
                 <div class="project-container2">
-                    <h1 style="color: black;"><?php echo $row['title']; ?></h1>
+                    <div class="project-info">
+                        <img src="assets/pfp/<?php echo $row2['pfp'];?>" class="image-post">
+                        <h1 style="color: black;"><?php echo $row['title']; ?></h1>
+                    </div>
                     <h2 style="color: black;"><?php echo $row['descr']; ?></h2>
                     <div class="date_posted">
                         Posted
