@@ -150,17 +150,23 @@ body {
     position: relative;
     margin-bottom: 20px;
     overflow-wrap: break-word;
-    position: sticky;
-    top: 80;
 }
 
-.project-container {
-    z-index: 999;
+.project-info {
+    background-color: yellow;
+    display: flex;
+}
+
+.image-post {
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
+    border-radius: 30%; 
 }
 
 .project-container2 h1 {
     font-size: 20px;
-    margin-top: 15px;
+    /* margin-top: 15px; */
 }
 
 .project-container2 h2 {
@@ -218,8 +224,15 @@ body {
     border: none;
 }
 
-/* BEGIN PROFILE TAB*/
 
+.date_posted {
+    position: absolute;
+    right: 10;
+    bottom: 10;
+    font-size: 13px;
+}
+
+/* BEGIN PROFILE TAB*/
 .profile_container{
 
     height: 30%;
