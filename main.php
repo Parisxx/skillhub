@@ -131,10 +131,11 @@ function timeElapsedString($datetime, $full = false) {
                 <div class="project-container2">
                     <h1 style="color: black;"><?php echo $row['title']; ?></h1>
                     <h2 style="color: black;"><?php echo $row['descr']; ?></h2>
-                    Posted
-                    <?php $datetime = $row['created'];
-                    echo timeElapsedString($datetime);?>
-                    
+                    <div class="date_posted">
+                        Posted
+                        <?php $datetime = $row['created'];
+                        echo timeElapsedString($datetime);?>
+                    </div>
                 </div>
             </div>
             <?php

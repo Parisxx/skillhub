@@ -150,8 +150,6 @@ body {
     position: relative;
     margin-bottom: 20px;
     overflow-wrap: break-word;
-    position: sticky;
-    top: 80;
 }
 
 .project-container {
@@ -216,6 +214,13 @@ body {
 
 .modal-content {
     border: none;
+}
+
+.date_posted {
+    position: absolute;
+    right: 10;
+    bottom: 10;
+    font-size: 13px;
 }
 
 .profile_container{
