@@ -43,27 +43,28 @@ $row2=mysqli_fetch_array($query);
 </div>
 
 <div class="about_container">
-<h1 class="">Experience</h1>
-<p class=""> <?php echo $row2['xp'];?> </p>
+<h1>Experience</h1>
+<p> <?php echo $row2['xp'];?> </p>
 <hr>
-<h1 class="">About me</h1>
-<p class=""> <?php echo $row2['aboutme'];?> </p>
+<h1>About me</h1>
+<p> <?php echo $row2['aboutme'];?> </p>
 </div>
 
 
 
 <div class="skill_container_one">
-<h4 class="">Skills</h4>
-<h4 class="">Location</h4>
-<p class=""> <?php echo $row2['location'];?> </p>
-<h4 class="">Website</h4>
-<p class=""> <?php echo $row2['website'];?> </p>
-<h4 class="">E-mail adress</h4>
-<p class=""> <?php echo $row2['email'];?> </p>
+<h4>Skills</h4>
+<p> <?php echo $row2['skills'];?> </p>
+<h4>Location</h4>
+<p> <?php echo $row2['location'];?> </p>
+<h4>Website</h4>
+<a href="https://<?php echo $row2['website'];?>" target="_blank"><?php echo $row2['website'];?></a>
+<h4>E-mail adress</h4>
+<p> <?php echo $row2['email'];?> </p>
 </div>
 
 <div class="skill_container_two">
-<h3> Work expierence </h3>
+<h3> Work experience </h3>
 </div>
 
 
