@@ -43,9 +43,9 @@ $row2=mysqli_fetch_array($query);
 
 </div>
 
-<!-- <div class="skill_container">
+<div class="skill_container">
 
-</div> -->
+</div>
 
 </body>
 </html>
