@@ -5,7 +5,15 @@ require('auth.php');
 $query=mysqli_query($db,"SELECT * FROM user WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
 $row2=mysqli_fetch_array($query);
 
+$query=mysqli_query($db,"SELECT * FROM work WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
+$row3=mysqli_fetch_array($query);
+
+
+
 ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,8 +30,8 @@ $row2=mysqli_fetch_array($query);
             <a href="main.php"><img class="logo" src="assets/img/logo.png"></a>
         </div>
         <div class="nav-links">
-            <a href="" class="btn btn-link text-decoration-none">Find Projects</a>
-            <a href="" class="btn btn-link text-decoration-none">Find Freelancers</a>
+            <a href="main.php" class="btn btn-link text-decoration-none">Find Projects</a>
+            <a href="freelancer.php" class="btn btn-link text-decoration-none">Find Freelancers</a>
         </div>
         <div class="nav-info">
             <i class="fa-light fa-bell"></i>
@@ -39,13 +47,41 @@ $row2=mysqli_fetch_array($query);
 <a href="profile_edit.php"><button id="edit" class="btn btn-primary">Edit Profile</button></a>
 </div>
 
+
 <div class="about_container">
-
+<h1>Experience</h1>
+<p> <?php echo $row2['xp'];?> </p>
+<hr>
+<h1>About me</h1>
+<p> <?php echo $row2['aboutme'];?> </p>
 </div>
 
-<div class="skill_container">
 
+
+<div class="skill_container_one">
+<h4>Skills</h4>
+<p> <?php echo $row3['skills'];?> </p>
+<h4>Location</h4>
+<p> <?php echo $row2['location'];?> </p>
+<h4>Website</h4>
+<a href="https://<?php echo $row2['website'];?>" target="_blank"><?php echo $row2['website'];?></a>
+<h4>E-mail adress</h4>
+<p> <?php echo $row2['email'];?> </p>
 </div>
+
+<div class="skill_container_two">
+<h3> Work experience </h3>
+
+<img class="work_logo" src="assets/img/<?php echo $row3['work_pf'];?>">
+<div class="work">
+<h5> <?php echo $row3['work_info'];?> </h5>
+<h6> <?php echo $row3['work_co'];?> </h6>
+<p> <?php echo $row3['work_xp'];?> year(s) </p>
+</div>
+</div>
+
+
+
 
 </body>
 </html>
