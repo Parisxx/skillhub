@@ -5,6 +5,11 @@ require('auth.php');
 $query=mysqli_query($db,"SELECT * FROM user WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
 $row2=mysqli_fetch_array($query);
 
+$query=mysqli_query($db,"SELECT * FROM work WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
+$row3=mysqli_fetch_array($query);
+
+
+
 ?>
 
 
@@ -42,6 +47,7 @@ $row2=mysqli_fetch_array($query);
 <a href="profile_edit.php"><button id="edit" class="btn btn-primary">Edit Profile</button></a>
 </div>
 
+
 <div class="about_container">
 <h1>Experience</h1>
 <p> <?php echo $row2['xp'];?> </p>
@@ -54,7 +60,7 @@ $row2=mysqli_fetch_array($query);
 
 <div class="skill_container_one">
 <h4>Skills</h4>
-<p> <?php echo $row2['skills'];?> </p>
+<p> <?php echo $row3['skills'];?> </p>
 <h4>Location</h4>
 <p> <?php echo $row2['location'];?> </p>
 <h4>Website</h4>
@@ -65,6 +71,13 @@ $row2=mysqli_fetch_array($query);
 
 <div class="skill_container_two">
 <h3> Work experience </h3>
+
+<img class="work_logo" src="assets/img/<?php echo $row3['work_pf'];?>">
+<div class="work">
+<h5> <?php echo $row3['work_co'];?> </h5>
+<p> <?php echo $row3['work_xp'];?> year(s) experience </p>
+<p> <?php echo $row3['work_info'];?> </p>
+</div>
 </div>
 
 
