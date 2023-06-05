@@ -25,8 +25,8 @@ $row2=mysqli_fetch_array($query);
             <a href="main.php"><img class="logo" src="assets/img/logo.png"></a>
         </div>
         <div class="nav-links">
-            <a href="" class="btn btn-link text-decoration-none">Find Projects</a>
-            <a href="" class="btn btn-link text-decoration-none">Find Freelancers</a>
+            <a href="main.php" class="btn btn-link text-decoration-none">Find Projects</a>
+            <a href="freelancer.php" class="btn btn-link text-decoration-none">Find Freelancers</a>
         </div>
         <div class="nav-info">
             <i class="fa-light fa-bell"></i>
