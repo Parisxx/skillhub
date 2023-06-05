@@ -7,8 +7,6 @@ $row2=mysqli_fetch_array($query);
 
 $query2=mysqli_query($db,"SELECT * FROM project_post")or die(mysqli_error());
 
-
-
 if(isset($_POST['submit'])){
 
     $email = $_SESSION['email'];
@@ -131,9 +129,9 @@ function timeElapsedString($datetime, $full = false) {
                 <div class="project-container2">
                     <div class="project-info">
                         <img src="assets/pfp/<?php echo $row2['pfp'];?>" class="image-post">
-                        <h1 style="color: black;"><?php echo $row['title']; ?></h1>
+                        <?php echo $row['title']; echo "<br />"; echo  $row['sort_job']; echo" • $"; echo  $row['min_salary']; echo" - $"; echo  $row['max_salary']; ?>
                     </div>
-                    <h2 style="color: black;"><?php echo $row['descr']; ?></h2>
+                    <h2><?php echo $row['descr']; ?></h2>
                     <div class="date_posted">
                         Posted
                         <?php $datetime = $row['created'];

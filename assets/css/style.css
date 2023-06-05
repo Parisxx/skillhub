@@ -155,6 +155,11 @@ body {
 .project-info {
     background-color: yellow;
     display: flex;
+    height: 5rem;
+}
+
+.project-info p {
+    font-size: 13px;
 }
 
 .image-post {
@@ -162,11 +167,11 @@ body {
     width: 40px;
     object-fit: contain;
     border-radius: 30%; 
+    margin-right: 10px;
 }
 
 .project-container2 h1 {
-    font-size: 20px;
-    /* margin-top: 15px; */
+    font-size: 17px;
 }
 
 .project-container2 h2 {
@@ -230,6 +235,8 @@ body {
     bottom: 10;
     font-size: 13px;
 }
+
+/* END PROJECT TAB */
 
 .profile_container{
 
