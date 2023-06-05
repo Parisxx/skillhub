@@ -74,9 +74,9 @@ $row3=mysqli_fetch_array($query);
 
 <img class="work_logo" src="assets/img/<?php echo $row3['work_pf'];?>">
 <div class="work">
-<h5> <?php echo $row3['work_co'];?> </h5>
-<p> <?php echo $row3['work_xp'];?> year(s) experience </p>
-<p> <?php echo $row3['work_info'];?> </p>
+<h5> <?php echo $row3['work_info'];?> </h5>
+<h6> <?php echo $row3['work_co'];?> </h6>
+<p> <?php echo $row3['work_xp'];?> year(s) </p>
 </div>
 </div>
 
