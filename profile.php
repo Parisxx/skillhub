@@ -6,6 +6,9 @@ $query=mysqli_query($db,"SELECT * FROM user WHERE email = '".$_SESSION['email'].
 $row2=mysqli_fetch_array($query);
 
 ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,12 +43,31 @@ $row2=mysqli_fetch_array($query);
 </div>
 
 <div class="about_container">
-
+<h1 class="">Experience</h1>
+<p class=""> <?php echo $row2['xp'];?> </p>
+<hr>
+<h1 class="">About me</h1>
+<p class=""> <?php echo $row2['aboutme'];?> </p>
 </div>
 
-<div class="skill_container">
 
+
+<div class="skill_container_one">
+<h4 class="">Skills</h4>
+<h4 class="">Location</h4>
+<p class=""> <?php echo $row2['location'];?> </p>
+<h4 class="">Website</h4>
+<p class=""> <?php echo $row2['website'];?> </p>
+<h4 class="">E-mail adress</h4>
+<p class=""> <?php echo $row2['email'];?> </p>
 </div>
+
+<div class="skill_container_two">
+<h3> Work expierence </h3>
+</div>
+
+
+
 
 </body>
 </html>

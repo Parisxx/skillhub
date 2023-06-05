@@ -218,6 +218,8 @@ body {
     border: none;
 }
 
+/* BEGIN PROFILE TAB*/
+
 .profile_container{
 
     height: 30%;
@@ -272,27 +274,42 @@ body {
 
     margin-left: 70px;
     margin-top: 20px;
-
-
-
+ 
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
 }
 
-.skill_container{
+.skill_container_one{
     position: absolute;
 
     width: 30%;
     height: 50%;
 
-
     margin-left: 66%;
     margin-top: 20px;
-
 
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
+
+
 }
+
+.skill_container_two{
+    position: absolute;
+
+    width: 30%;
+    height: 50%;
+
+    margin-left: 66%;
+    margin-top: 26%;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;  
+
+}
+
+
 
