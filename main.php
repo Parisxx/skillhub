@@ -132,7 +132,6 @@ function timeElapsedString($datetime, $full = false) {
 
                         <h1 style="color: black;"><?php echo $row['title']; echo "<br />";?>
                         <p><?php  echo $row['sort_job']; echo" • $"; echo  $row['min_salary']; echo" - $"; echo  $row['max_salary']; ?> </p>
-                        </br>
 
 
                     </div>
