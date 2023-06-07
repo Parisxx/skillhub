@@ -150,9 +150,9 @@ function timeElapsedString($datetime, $full = false) {
         </div>
         <div class="col-sm-3">
             <div class="user-tab">
-                <a href="profile.php"><img src="assets/pfp/<?php echo $row2['pfp'];?>" class="image2"></a>
-                <h1><?php echo $row2['firstname'];?> <?php echo $row2['lastname'];?></h1>
-                <p><?php echo $row2['work'];?> - <?php echo "" . $row2['year_xp'] . " year(s) of experience";?></p>
+                <a href="profile.php"><img src="assets/pfp/<?php echo $row3['pfp'];?>" class="image2"></a>
+                <h1><?php echo $row3['firstname'];?> <?php echo $row3['lastname'];?></h1>
+                <p><?php echo $row3['work'];?> - <?php echo "" . $row3['year_xp'] . " year(s) of experience";?></p>
                 <a href="profile_edit.php"><button class="btn btn-primary">Edit Profile</button></a>
             </div>
             
