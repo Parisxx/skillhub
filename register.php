@@ -3,42 +3,56 @@
 require('initialize.php');
 session_start();
 
-$error = "";
-if (isset($_POST['submit'])) { 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $error = [];
+    
     $firstname = mysqli_real_escape_string($db, $_POST['firstname']);
     $lastname = mysqli_real_escape_string($db, $_POST['lastname']);
     $email = mysqli_real_escape_string($db, $_POST['email']);
-    $password = mysqli_real_escape_string($db,  $_POST['password']); 
-     
-    if (!$_POST['firstname']) {
-      echo"Name is required <br>";
-     }
-    if (!$email) {
-        echo"Email is required <br>";
-     }
-    if (!$password) {
-        echo"Password is required <br>";
-     } 
-     if ($error) {
-        echo"<b>There were error(s) in your form!</b> <br>".$error;
-     }  else {
-       
+    $password = mysqli_real_escape_string($db, $_POST['password']);
+    
+    if (empty($firstname)) {
+        $error[] = "First name is required.";
+    }
+    if (empty($lastname)) {
+        $error[] = "Last name is required.";
+    }
+    if (empty($email)) {
+        $error[] = "Email is required.";
+    }
+    if (empty($password)) {
+        $error[] = "Password is required.";
+    }
+    
+    if (empty($error)) {
         $query = "SELECT id FROM user WHERE email = '$email'";
         $result = mysqli_query($db, $query);
+        
         if (mysqli_num_rows($result) > 0) {
-            echo"<p>Your email has taken already!</p>";
+            $error[] = "Email is already taken.";
         } else {
-            $query = "INSERT INTO user (firstname, lastname, email, password) VALUES ('$firstname', '$lastname', '$email', '".md5($password)."')";
-            if (!mysqli_query($db, $query)){
-                echo"<p>Could not sign you up - please try again.</p>";
-                } else {
-                $_SESSION['id'] = mysqli_insert_id($db);  
+            $hashedPassword = md5($password);
+            $insertUserQuery = "INSERT INTO user (firstname, lastname, email, password) VALUES ('$firstname', '$lastname', '$email', '$hashedPassword')";
+            $insertWorkQuery = "INSERT INTO work (email) VALUES ('$email')";
+            
+            if (mysqli_query($db, $insertUserQuery) && mysqli_query($db, $insertWorkQuery)) {
+                $_SESSION['id'] = mysqli_insert_id($db);
                 $_SESSION['email'] = $email;
-                header("Location: login.php");  
-                }
+                header("Location: login.php");
+                exit();
+            } else {
+                $error[] = "Could not sign you up. Please try again.";
             }
-        }  
+        }
     }
+    
+    if (!empty($error)) {
+        echo "<b>There were error(s) in your form:</b><br>";
+        foreach ($error as $errorMessage) {
+            echo $errorMessage . "<br>";
+        }
+    }
+}
 
 ?>
 

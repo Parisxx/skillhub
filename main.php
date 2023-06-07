@@ -17,10 +17,11 @@ if(isset($_POST['submit'])){
 	$title = mysqli_real_escape_string($db,$title);
     $descr = stripslashes($_REQUEST['descr']);
 	$descr = mysqli_real_escape_string($db,$descr); 
+    $sort_job = $_POST['sort_job'];
     $created = date("Y-m-d H:i:s");
 
-    $run = "INSERT INTO `project_post` (email, title, descr, created)
-    VALUES ('$email', '$title', '$descr', '$created')";
+    $run = "INSERT INTO `project_post` (email, title, descr, sort_job, created)
+    VALUES ('$email', '$title', '$descr', '$sort_job', '$created')";
 
     $result = mysqli_query($db, $run) or die(mysqli_error($db));
     
@@ -97,6 +98,12 @@ function timeElapsedString($datetime, $full = false) {
             <input type="text" class="form-control" id="recipient-name" name="title" required>
             <label for="message-text" class="col-form-label" name="descr">Description:</label>
             <textarea class="form-control" id="message-text" name="descr" required></textarea>
+            <select class="form-select" name="sort_job" aria-label="Default select example" required>
+                <option value="">Select...</option>
+                <option value="Parttime">Parttime</option>
+                <option value="Fulltime">Fulltime</option>
+                <option value="Remote">Remote</option>
+            </select>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
