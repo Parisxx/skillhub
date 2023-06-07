@@ -5,16 +5,15 @@ require('auth.php');
 $query=mysqli_query($db,"SELECT * FROM user WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
 $row2=mysqli_fetch_array($query);
 
-$query2=mysqli_query($db,"SELECT * FROM project_post")or die(mysqli_error());
+$query2=mysqli_query($db,"SELECT * FROM project_post ORDER BY created DESC")or die(mysqli_error());
 
 if(isset($_POST['submit'])){
 
     $email = $_SESSION['email'];
     $title = stripslashes($_REQUEST['title']);
 	$title = mysqli_real_escape_string($db,$title);
-  $descr = stripslashes($_REQUEST['descr']);
+    $descr = stripslashes($_REQUEST['descr']);
 	$descr = mysqli_real_escape_string($db,$descr); 
-
     $created = date("Y-m-d H:i:s");
 
     $run = "INSERT INTO `project_post` (email, title, descr, created)
@@ -124,16 +123,13 @@ function timeElapsedString($datetime, $full = false) {
             <?php
             $i=0;
             while($row = mysqli_fetch_array($query2)) {
-        ?>
+            ?>
             <div class="project-tab" style="background-color: white;">
                 <div class="project-container2">
                     <div class="project-info">
                         <img src="assets/pfp/<?php echo $row2['pfp'];?>" class="image-post">
-
-                        <h1 style="color: black;"><?php echo $row['title']; echo "<br />";?>
+                        <h1><?php echo $row['title']; echo "<br />";?>
                         <p><?php  echo $row['sort_job']; echo" • $"; echo  $row['min_salary']; echo" - $"; echo  $row['max_salary']; ?> </p>
-
-
                     </div>
                     <h2><?php echo $row['descr']; ?></h2>
                     <div class="date_posted">
