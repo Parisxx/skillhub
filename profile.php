@@ -2,11 +2,11 @@
 require('initialize.php');
 require('auth.php'); 
 
-$query=mysqli_query($db,"SELECT * FROM user WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
-$row2=mysqli_fetch_array($query);
+$query1=mysqli_query($db,"SELECT * FROM user WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
+$row2=mysqli_fetch_array($query1);
 
-$query=mysqli_query($db,"SELECT * FROM work WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
-$row3=mysqli_fetch_array($query);
+$query2=mysqli_query($db,"SELECT * FROM work WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
+$row3=mysqli_fetch_array($query2);
 
 
 
@@ -72,11 +72,16 @@ $row3=mysqli_fetch_array($query);
 <div class="skill_container_two">
 <h3> Work experience </h3>
 
-<img class="work_logo" src="assets/img/<?php echo $row3['work_pf'];?>">
+<?php
+            $i=0;
+            while($row = mysqli_fetch_array($query2)) {
+        ?>
+<img class="work_logo" src="assets/img/<?php echo $row['work_pf'];?>">
 <div class="work">
-<h5> <?php echo $row3['work_info'];?> </h5>
-<h6> <?php echo $row3['work_co'];?> </h6>
-<p> <?php echo $row3['work_xp'];?> year(s) </p>
+<h5> <?php echo $row['work_info'];?> </h5>
+<h6> <?php echo $row['work_co'];?> </h6>
+<p> <?php echo $row['work_xp'];?> year(s) </p>
+<?php }?>
 </div>
 </div>
 
