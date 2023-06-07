@@ -63,7 +63,7 @@ $query2=mysqli_query($db,"SELECT * FROM work WHERE email = '".$_SESSION['email']
 
 <h4>Skills</h4>
 <?php while ($row3 = mysqli_fetch_array($query2)) { ?>
-<p> <?php echo $row3['skills'];?> </p>
+<p class="skill"> <?php echo $row3['skills'];?> </p>
 <?php } ?>
 <h4>Location</h4>
 <p> <?php echo $row2['location'];?> </p>

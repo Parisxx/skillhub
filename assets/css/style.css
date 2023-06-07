@@ -332,3 +332,12 @@ body {
     margin-right: 10px;
 }
 
+
+
+.skill {
+    display: inline-block;
+    padding: 1%;
+    border-radius: 20px;
+    border: 1px solid #4d4d4d;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
