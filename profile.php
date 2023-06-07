@@ -80,12 +80,10 @@ $query2=mysqli_query($db,"SELECT * FROM work WHERE email = '".$_SESSION['email']
 <?php mysqli_data_seek($query2, 0); ?>
 <?php while ($row3 = mysqli_fetch_array($query2)) { ?>
 <img class="work_logo" src="assets/img/<?php echo $row3['work_pf'];?>">
-<div class="work">
 <h5> <?php echo $row3['work_info'];?> </h5>
 <h6> <?php echo $row3['work_co'];?> </h6>
 <p> <?php echo $row3['work_xp'];?> year(s) </p>
 <?php } ?>
-</div>
 </div>
 
 

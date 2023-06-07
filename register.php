@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $result = mysqli_query($db, $query);
         
         if (mysqli_num_rows($result) > 0) {
-            $error[] = "Email already taken.";
+            $error[] = "Email is already taken.";
         } else {
             $hashedPassword = md5($password);
             $insertUserQuery = "INSERT INTO user (firstname, lastname, email, password) VALUES ('$firstname', '$lastname', '$email', '$hashedPassword')";
