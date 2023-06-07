@@ -73,9 +73,10 @@ $row3=mysqli_fetch_array($query2);
 <h3> Work experience </h3>
 
 <?php
-            $i=0;
-            while($row = mysqli_fetch_array($query2)) {
-        ?>
+    $i=0;
+    while($row = mysqli_fetch_array($query2)) {
+?>
+
 <img class="work_logo" src="assets/img/<?php echo $row['work_pf'];?>">
 <div class="work">
 <h5> <?php echo $row['work_info'];?> </h5>
