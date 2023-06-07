@@ -230,6 +230,10 @@ body {
     border: none;
 }
 
+.form-select {
+    margin-top: 10px;
+}
+
 
 .date_posted {
     position: absolute;
