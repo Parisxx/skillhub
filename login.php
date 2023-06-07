@@ -52,8 +52,8 @@ and password='".md5($password)."'";
                 <input id="button" class="btn btn-primary" name="submit" type="submit" value="Login" name="submit">
 
               </form>
+              <p>Don't have an account yet? <a href="register.php">Register here!</a></p>
             </div>
-
           </div>
         </div>
       </div>

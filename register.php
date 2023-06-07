@@ -80,8 +80,8 @@ if (isset($_POST['submit'])) {
                 <input id="button" class="btn btn-primary" name="submit" type="submit" value="Register" name="submit">
 
               </form>
+              <p>Already have an account? <a href="login.php">Login here</a>.</p>
             </div>
-
           </div>
         </div>
       </div>
