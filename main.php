@@ -2,10 +2,13 @@
 require('initialize.php');
 require('auth.php'); 
 
-$query=mysqli_query($db,"SELECT * FROM user WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
-$row2=mysqli_fetch_array($query);
-
 $query2=mysqli_query($db,"SELECT * FROM project_post ORDER BY created DESC")or die(mysqli_error());
+$row69=mysqli_fetch_array($query2);
+
+$query3=mysqli_query($db,"SELECT * FROM user WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
+$row3=mysqli_fetch_array($query3);
+
+
 
 if(isset($_POST['submit'])){
 
@@ -77,7 +80,7 @@ function timeElapsedString($datetime, $full = false) {
         <div class="nav-info">
             <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="test"><i class="fa-light fa-plus"></i></a>
             <i class="fa-light fa-bell"></i>
-            <a href="profile.php"><img src="assets/pfp/<?php echo $row2['pfp'];?>" class="image"></a>
+            <a href="profile.php"><img src="assets/pfp/<?php echo $row3['pfp'];?>" class="image"></a>
         </div>
     </div>
     <!-- Modal -->
@@ -121,8 +124,10 @@ function timeElapsedString($datetime, $full = false) {
                 </div>
             </div>
             <?php
-            $i=0;
-            while($row = mysqli_fetch_array($query2)) {
+      
+            foreach($query2 as $row) {
+                $query=mysqli_query($db,"SELECT * FROM user WHERE email = '".$row['email']."'")or die(mysqli_error());
+                $row2=mysqli_fetch_array($query);
             ?>
             <div class="project-tab" style="background-color: white;">
                 <div class="project-container2">
