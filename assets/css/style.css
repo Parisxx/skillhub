@@ -415,3 +415,39 @@ body {
     border: 1px solid #4d4d4d;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   }
+
+  .change-pfp {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.image2 {
+    height: 130px;
+    width: 130px;
+    object-fit: contain;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    opacity: 1;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  text-align: center;
+  cursor: pointer;
+  transform: translateY(80px);
+  z-index: 10;
+  position: relative;
+}
+
+.container-image:hover .image2 {
+    opacity: 0.3;
+  }
+
+.container-image:hover .middle {
+  opacity: 1;
+}
+
+.middle i{
+  font-size: 26px;
+}

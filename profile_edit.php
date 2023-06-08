@@ -7,34 +7,7 @@ $row2=mysqli_fetch_array($query1);
 
 $query2=mysqli_query($db,"SELECT * FROM work WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
 
-// profile picture edit
-
-// $sql = "SELECT id FROM user";
-// $result = mysqli_query($db, $sql);
-
-// if ($result) {
-//     // Iterate through each user
-//     while ($row = mysqli_fetch_assoc($result)) {
-//         $userId = $row2['id'];
-//         $newProfilePicturePath = "picture.png";
-
-//         // Update the profile picture path for the current user
-//         $updateSql = "UPDATE user SET pfp = '$newProfilePicturePath' WHERE id = $userId";
-//         $updateResult = mysqli_query($db, $updateSql);
-
-//         if ($updateResult) {
-//             echo "Profile picture updated successfully for user with ID: $userId<br>";
-//         } else {
-//             echo "Failed to update the profile picture for user with ID: $userId<br>";
-//         }
-//     }
-// } else {
-//     echo "Error retrieving user IDs from the database.";
-// }
-
-// // Close the database connection
-// mysqli_close($db);
-// ?>
+?>
 
 
 
@@ -79,6 +52,8 @@ $query2=mysqli_query($db,"SELECT * FROM work WHERE email = '".$_SESSION['email']
                 </div>
                 <input type="submit" value="Save" name="upload" class="btn btn-primary">
                 </form>
+
+                
 
 
 
