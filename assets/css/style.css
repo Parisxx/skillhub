@@ -306,10 +306,11 @@ body {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     padding: 1%;
+    overflow: auto;
 }
 
-.skill_container_two{
-    position: absolute;
+
+.skill_container_two {
     width: 30%;
     height: 50%;
     margin-left: 66%;
@@ -318,13 +319,20 @@ body {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;  
     padding: 1%;
+    overflow: auto;
+
+
+
 }
 
-.work_logo{
+.work_logo {
     width: 50px;
     height: 50px;
+    max-width: 100px;
+    margin-right: 10px;
 }
 
+<<<<<<< HEAD
 .work{
     margin-left: 70px;
 }
@@ -406,3 +414,15 @@ body {
     border-radius: 50%;
     cursor: pointer;
   }
+=======
+
+
+
+.skill {
+    display: inline-block;
+    padding: 1%;
+    border-radius: 20px;
+    border: 1px solid #4d4d4d;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+>>>>>>> 349517a3ead09af7bcf57b7bc1c025f1491c7219

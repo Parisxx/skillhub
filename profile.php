@@ -6,7 +6,11 @@ $query1=mysqli_query($db,"SELECT * FROM user WHERE email = '".$_SESSION['email']
 $row2=mysqli_fetch_array($query1);
 
 $query2=mysqli_query($db,"SELECT * FROM work WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
-$row3=mysqli_fetch_array($query2);
+// $row3=mysqli_fetch_array($query2);
+
+
+
+
 
 
 
@@ -58,9 +62,13 @@ $row3=mysqli_fetch_array($query2);
 
 
 
+
 <div class="skill_container_one">
+
 <h4>Skills</h4>
-<p> <?php echo $row3['skills'];?> </p>
+<?php while ($row3 = mysqli_fetch_array($query2)) { ?>
+<p class="skill"> <?php echo $row3['skills'];?> </p>
+<?php } ?>
 <h4>Location</h4>
 <p> <?php echo $row2['location'];?> </p>
 <h4>Website</h4>
@@ -72,19 +80,16 @@ $row3=mysqli_fetch_array($query2);
 <div class="skill_container_two">
 <h3> Work experience </h3>
 
-<?php
-    $i=0;
-    while($row = mysqli_fetch_array($query2)) {
-?>
 
-<img class="work_logo" src="assets/img/<?php echo $row['work_pf'];?>">
-<div class="work">
-<h5> <?php echo $row['work_info'];?> </h5>
-<h6> <?php echo $row['work_co'];?> </h6>
-<p> <?php echo $row['work_xp'];?> year(s) </p>
-<?php }?>
+<?php mysqli_data_seek($query2, 0); ?>
+<?php while ($row3 = mysqli_fetch_array($query2)) { ?>
+<img class="work_logo" src="assets/pfp/<?php echo $row3['work_pf'];?>">
+<h5> <?php echo $row3['work_info'];?> </h5>
+<h6> <?php echo $row3['work_co'];?> </h6>
+<p> <?php echo $row3['work_xp'];?> year(s) </p>
+<?php } ?>
 </div>
-</div>
+
 
 
 
