@@ -44,16 +44,16 @@ $query2=mysqli_query($db,"SELECT * FROM work WHERE email = '".$_SESSION['email']
                 <div class="container-image">
                 <div class="middle">
                         <label class="change-pfp">
-                            <input type="file" name="image" onchange="readURL(this);" hidden/>
+                            <input type="file" name="image" onchange="readURL(this);" hidden required/>
                             <i class="fa-light fa-pen-to-square"></i>
                         </label>
                     </div>
-                    <img style="border-radius: 100%;" src="assets/pfp/<?= $row2['pfp']; ?>" id="image-change" class="image2">
+                    <img src="assets/pfp/<?= $row2['pfp']; ?>" id="image-change" class="profile_image_two">
                 </div>
                 <input type="submit" value="Save" name="upload" class="btn btn-primary">
-                </form>
+</form>
 
-                
+
 
 
 

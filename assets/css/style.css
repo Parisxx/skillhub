@@ -337,12 +337,8 @@ body {
 
 .profile_image {
     width: 14%;
-    object-fit: contain;
     border-radius: 100%; 
-    justify-content: center;
-    margin-left: 5px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    padding: 1%;
 }
 
 .profile_text_big{
@@ -419,31 +415,35 @@ body {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   }
 
-  .change-pfp {
+
+
+/* profile picture edit */
+
+.change-pfp {
     cursor: pointer;
     font-weight: bold;
 }
 
-.image2 {
-    height: 130px;
-    width: 130px;
-    object-fit: contain;
+.profile_image_two {
+    padding: 1%;
     transition: .5s ease;
-    backface-visibility: hidden;
-    opacity: 1;
+    width: 14%;
+    border-radius: 100%; 
+    justify-content: center;
+
 }
 
 .middle {
   transition: .5s ease;
   opacity: 0;
-  text-align: center;
   cursor: pointer;
-  transform: translateY(80px);
   z-index: 10;
   position: relative;
+
+
 }
 
-.container-image:hover .image2 {
+.container-image:hover .profile_image_two {
     opacity: 0.3;
   }
 
