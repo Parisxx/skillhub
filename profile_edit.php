@@ -41,32 +41,24 @@ $query2=mysqli_query($db,"SELECT * FROM work WHERE email = '".$_SESSION['email']
 
 
 <form action="upload.php" method="post" enctype="multipart/form-data">
-                <div class="container-image">
-                <div class="middle">
-                        <label class="change-pfp">
-                            <input type="file" name="image" onchange="readURL(this);" hidden required/>
-                            <i class="fa-light fa-pen-to-square"></i>
-                        </label>
-                    </div>
-                    <img src="assets/pfp/<?= $row2['pfp']; ?>" id="image-change" class="profile_image_two">
-                </div>
-                <input type="submit" value="Change profile picture" name="upload" class="btn btn-primary">
-</form>
+    <div class="container-image">
+        <div class="middle">
+            <label class="change-pfp">
+                <input type="file" name="image" onchange="readURL(this);" hidden required/>
+                <i class="fa-light fa-pen-to-square"></i>
+            </label>
+        </div>
+<img src="assets/pfp/<?= $row2['pfp']; ?>" id="image-change" class="profile_image_two">
+    </div>
 
+    <input class="profile_text_edit" type="text" name="firstname" placeholder=" <?php echo $row2['firstname'];?>">
+    <input class="profile_text_edit_two" type="text" name="lastname" placeholder=" <?php echo $row2['lastname'];?>">
+    <input class="profile_text_small_edit" type="text" name="work" placeholder=" <?php echo $row2['work'];?>">
+    <input class="profile_text_small_edit_two" type="text" name="year_xp" placeholder=" <?php echo $row2['year_xp'];?> year(s) of experience ">
 
-
-
-<form method="post">
-<input class="profile_text_edit" type="text" name="firstname" placeholder=" <?php echo $row2['firstname'];?>">
-<input class="profile_text_edit_two" type="text" name="lastname" placeholder=" <?php echo $row2['lastname'];?>">
-<input  class="btn btn-primary" id="button_profile_text" type="submit" name="name" value="Change name">
-</form>
-
-
-
-<p class="profile_text_small"> <?php echo $row2['work'];?> - <?php echo $row2['year_xp'];?> year(s) of experience </p>
-<a href="profile_edit.php"><button id="edit" class="btn btn-primary">Edit Profile</button></a>
+    <input id="edit" type="submit" value="Save profile" name="upload" class="btn btn-primary">
 </div>
+</form>
 
 
 <div class="about_container">

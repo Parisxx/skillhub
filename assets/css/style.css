@@ -459,16 +459,45 @@ body {
     position: absolute;
     left: 30%;
     top: 18%;
+    border: none;
+    outline: none;
+
 }
 
 .profile_text_edit{
     position: absolute;
     left: 20%;
     top: 18%;
+    border: none;
+    outline: none;
 }
 
 #button_profile_text{
     position: absolute;
     left: 43%;
     top: 18%;
+    border: none;
+    outline: none;
 }
+
+.profile_text_small_edit{
+    position: absolute;
+    left: 20%;
+    top: 26%;
+    border: none;
+    outline: none;
+}
+
+.profile_text_small_edit_two{
+    position: absolute;
+    left: 30%;
+    top: 26%;
+    border: none;
+    outline: none;
+}
+
+::placeholder {
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+
+  }
