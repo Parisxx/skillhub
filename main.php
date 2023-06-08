@@ -98,7 +98,8 @@ function timeElapsedString($datetime, $full = false) {
             <input type="text" class="form-control" id="recipient-name" name="title" required>
             <label for="message-text" class="col-form-label" name="descr">Description:</label>
             <textarea class="form-control" id="message-text" name="descr" required></textarea>
-            <select class="form-select" name="sort_job" aria-label="Default select example" required>
+            <label for="select_job" class="col-form-label">Sort job:</label>
+            <select class="form-select" name="sort_job" aria-label="Default select example" id="select_job" required>
                 <option value="">Select...</option>
                 <option value="Parttime">Parttime</option>
                 <option value="Fulltime">Fulltime</option>
