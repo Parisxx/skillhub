@@ -328,3 +328,81 @@ body {
 .work{
     margin-left: 70px;
 }
+
+.priceSlider {
+    width: 400px;
+    background-color: #fff;
+    padding: 10px 20px;  
+    text-align: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+  
+.min-max label {    
+    font-size: 14px;
+    float: left;
+    margin-right: 5px;
+    line-height: 1.6;    
+}
+  
+.min {
+    float: left;  
+    border-top-left-radius: 50%; 
+  }
+  
+  .max {
+    float: right; 
+  }
+  
+  .min-max {
+    width: 90%;
+    max-width: 200px;
+    margin: 0 auto;
+    padding: 25px 0px 15px 0px;  
+  }
+  
+  .min-max span {
+    font-size: 10px;
+    text-align: center;
+    display: inline-block;
+    width: 30px;
+    border: 1px solid #dedede;    
+    border-radius: 5px;
+  }
+  
+  .min-max-range {
+    padding: 30px 0px 20px 0px;    
+  }
+  
+  .range {
+    -webkit-appearance:none;
+    appearance:none;
+    width: 50%;
+    height: 5px;
+    max-width: 400px;
+    background-color: #dedede;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    float: left;  
+  }
+  
+  .range::-webkit-slider-thumb {
+    -webkit-appearance:none;
+    appearance:none;
+    background-color: #AB7FBC;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .range::moz-range-thumb {
+    -webkit-appearance:none;
+    appearance:none;
+    background-color: #AB7FBC;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+  }

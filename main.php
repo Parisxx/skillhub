@@ -85,7 +85,7 @@ function timeElapsedString($datetime, $full = false) {
         </div>
     </div>
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" is-active>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -104,6 +104,20 @@ function timeElapsedString($datetime, $full = false) {
                 <option value="Fulltime">Fulltime</option>
                 <option value="Remote">Remote</option>
             </select>
+            <div class="priceSlider">
+                <div class="min-max-range">
+                    <input style="border-radius: 5px 0px 0px 5px;" type="range" min="500" max="5000" value="2000" class="range" id="min">
+                    <input style="border-radius: 0px 5px 5px 0px;" type="range" min="3000" max="10000" value="3000" class="range" id="max">     
+                </div>    
+                <div class="min-max">
+                    <div class="min">
+                        <label>Min</label><span id="min-value"></span>
+                    </div>
+                    <div class="max">
+                        <label>Max</label><span id="max-value"></span>
+                    </div>     
+                </div> 
+            </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -166,4 +180,22 @@ function timeElapsedString($datetime, $full = false) {
         </div>
     </div>
 </body>
+<script>
+var minSlider = document.getElementById('min');
+var maxSlider = document.getElementById('max');
+
+var outputMin = document.getElementById('min-value');
+var outputMax = document.getElementById('max-value');
+
+outputMin.innerHTML = minSlider.value;
+outputMax.innerHTML = maxSlider.value;
+
+minSlider.oninput = function(){
+ outputMin.innerHTML=this.value;    
+}
+
+maxSlider.oninput = function(){
+ outputMax.innerHTML=this.value;    
+}
+</script>
 </html>
