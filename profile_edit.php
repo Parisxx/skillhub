@@ -50,14 +50,17 @@ $query2=mysqli_query($db,"SELECT * FROM work WHERE email = '".$_SESSION['email']
                     </div>
                     <img src="assets/pfp/<?= $row2['pfp']; ?>" id="image-change" class="profile_image_two">
                 </div>
-                <input type="submit" value="Save" name="upload" class="btn btn-primary">
+                <input type="submit" value="Change profile picture" name="upload" class="btn btn-primary">
 </form>
 
 
 
 
-
-<h1 class="profile_text_big"> <?php echo $row2['firstname'];?> <?php echo $row2['lastname'];?> </h1>
+<form method="post">
+<input class="profile_text_edit" type="text" name="firstname" placeholder=" <?php echo $row2['firstname'];?>">
+<input class="profile_text_edit_two" type="text" name="lastname" placeholder=" <?php echo $row2['lastname'];?>">
+<input  class="btn btn-primary" id="button_profile_text" type="submit" name="name" value="Change name">
+</form>
 
 
 
