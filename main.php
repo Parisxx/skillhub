@@ -18,10 +18,12 @@ if(isset($_POST['submit'])){
     $descr = stripslashes($_REQUEST['descr']);
 	$descr = mysqli_real_escape_string($db,$descr); 
     $sort_job = $_POST['sort_job'];
+    $min_salary = $_POST['minimum'];
+    $max_salary = $_POST['maximum'];
     $created = date("Y-m-d H:i:s");
 
-    $run = "INSERT INTO `project_post` (email, title, descr, sort_job, created)
-    VALUES ('$email', '$title', '$descr', '$sort_job', '$created')";
+    $run = "INSERT INTO `project_post` (email, title, descr, sort_job, min_salary, max_salary, created)
+    VALUES ('$email', '$title', '$descr', '$sort_job', '$min_salary', '$max_salary', '$created')";
 
     $result = mysqli_query($db, $run) or die(mysqli_error($db));
     
@@ -108,8 +110,8 @@ function timeElapsedString($datetime, $full = false) {
             <div class="priceSlider">
                 <label for="min" class="col-form-label">Estimated monthly income:</label>
                 <div class="min-max-range">
-                    <input style="border-radius: 5px 0px 0px 5px;" type="range" min="500" max="5000" value="2000" class="range" id="min">
-                    <input style="border-radius: 0px 5px 5px 0px;" type="range" min="3000" max="10000" value="3000" class="range" id="max">     
+                    <input style="border-radius: 5px 0px 0px 5px;" type="range" min="500" max="5000" value="2000" class="range" id="min" name="minimum">
+                    <input style="border-radius: 0px 5px 5px 0px;" type="range" min="3000" max="10000" value="3000" class="range" id="max" name="maximum">     
                 </div>    
                 <div class="min-max">
                     <div class="min">
