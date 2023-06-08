@@ -6,16 +6,16 @@
   	$image = $_FILES['image']['name'];
 	$email = $_SESSION['email'];
 	$id = $_GET['id'];
-  	$target = "uploads/".basename($image);
+  	$target = "assets/pfp/".basename($image);
 
-	$sql = "UPDATE userinfo SET file_name = '$image' WHERE email = '$email'";
+	$sql = "UPDATE user SET pfp = '$image' WHERE email = '$email'";
   	mysqli_query($db, $sql);
 	 if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
-		header('location: profile');
+		header('location: profile_edit.php');
   	}else{
   		echo"Failed to upload image";
   	}
   }
-  $result = mysqli_query($db, "SELECT * FROM userinfo");
+  $result = mysqli_query($db, "SELECT * FROM user");
 ?>
 
