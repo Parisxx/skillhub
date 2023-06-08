@@ -230,6 +230,10 @@ body {
     border: none;
 }
 
+.modal {
+    overflow-y: hidden;
+}
+
 .date_posted {
     position: absolute;
     right: 10;
@@ -244,7 +248,6 @@ body {
     padding: 10px 20px;  
     text-align: center;
     justify-content: center;
-    margin-top: 10px;
 }
   
 .min-max label {    
@@ -267,7 +270,7 @@ body {
     width: 90%;
     max-width: 200px;
     margin: 0 auto;
-    padding: 25px 0px 15px 0px;  
+    /* padding: 25px 0px 15px 0px;   */
 }
   
 .min-max span {
@@ -280,7 +283,7 @@ body {
 }
   
 .min-max-range {
-    padding: 30px 0px 20px 0px;    
+    padding: 20px 0px 20px 0px;    
 }
   
 .range {

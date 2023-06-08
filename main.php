@@ -106,6 +106,7 @@ function timeElapsedString($datetime, $full = false) {
                 <option value="Remote">Remote</option>
             </select>
             <div class="priceSlider">
+                <label for="min" class="col-form-label">Estimated monthly income:</label>
                 <div class="min-max-range">
                     <input style="border-radius: 5px 0px 0px 5px;" type="range" min="500" max="5000" value="2000" class="range" id="min">
                     <input style="border-radius: 0px 5px 5px 0px;" type="range" min="3000" max="10000" value="3000" class="range" id="max">     
