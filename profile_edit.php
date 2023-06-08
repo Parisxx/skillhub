@@ -134,4 +134,19 @@ $query2=mysqli_query($db,"SELECT * FROM work WHERE email = '".$_SESSION['email']
 
 
 </body>
+<script>
+function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#image-change')
+                        .attr('src', e.target.result)
+                        .width(130)
+                        .height(130);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+}</script>
 </html>
