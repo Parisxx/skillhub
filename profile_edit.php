@@ -81,7 +81,7 @@ $query2=mysqli_query($db,"SELECT * FROM work WHERE email = '".$_SESSION['email']
                 </form>
 
 
-<!-- <img src="assets/pfp/<?php echo $row2['pfp'];?>" class="profile_image"> -->
+
 <h1 class="profile_text_big"> <?php echo $row2['firstname'];?> <?php echo $row2['lastname'];?> </h1>
 
 
