@@ -424,12 +424,11 @@ body {
 }
 
 .profile_image_two {
-    padding: 1%;
     transition: .5s ease;
-    width: 14%;
+    width: 100px;
+    height: 100px;
     border-radius: 100%; 
     justify-content: center;
-
 }
 
 .middle {
@@ -438,8 +437,6 @@ body {
   cursor: pointer;
   z-index: 10;
   position: relative;
-
-
 }
 
 .container-image:hover .profile_image_two {
