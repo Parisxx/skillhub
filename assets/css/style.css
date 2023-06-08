@@ -452,3 +452,23 @@ body {
 .middle i{
   font-size: 26px;
 }
+
+
+
+.profile_text_edit_two{
+    position: absolute;
+    left: 30%;
+    top: 18%;
+}
+
+.profile_text_edit{
+    position: absolute;
+    left: 20%;
+    top: 18%;
+}
+
+#button_profile_text{
+    position: absolute;
+    left: 43%;
+    top: 18%;
+}
