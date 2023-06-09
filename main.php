@@ -2,9 +2,6 @@
 require('initialize.php');
 require('auth.php'); 
 
-$query2=mysqli_query($db,"SELECT * FROM project_post ORDER BY created DESC")or die(mysqli_error());
-$row4=mysqli_fetch_array($query2);
-
 $query3=mysqli_query($db,"SELECT * FROM user WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
 $row3=mysqli_fetch_array($query3);
 
@@ -31,6 +28,9 @@ if(isset($_POST['submit'])){
         header('Location: main.php'); 
     }
 }
+
+$search = $_POST['search'];
+
 
 function timeElapsedString($datetime, $full = false) {
     $now = new DateTime;
@@ -140,37 +140,46 @@ function timeElapsedString($datetime, $full = false) {
         <div class="col-sm-5">
             <div class="project-tab">
                 <div class="project-container">
+
                     <h1>Are you looking for a dream job?</h1>
                     <h2>Skillhub is a place where you can find your dream job in various skills.<br>More than 10.000 jobs are available here.</h2>
                     <div class="search">
-                        <input type="text" class="form-control" placeholder="Search your dream job here">
-                        <i class="fa-light fa-magnifying-glass"></i>
+                        <form method="post">
+                            <input type="text" class="form-control" name="search" placeholder="Search your dream job here">
+                            <i class="fa-light fa-magnifying-glass"></i>
+                        </form>
                     </div>
                 </div>
             </div>
             <?php
-      
-            foreach($query2 as $row) {
-                $query=mysqli_query($db,"SELECT * FROM user WHERE email = '".$row['email']."'")or die(mysqli_error());
-                $row2=mysqli_fetch_array($query);
+            $sql = "SELECT * FROM project_post WHERE title LIKE '%$search%' OR descr LIKE '%$search%' ORDER BY created DESC";
+            $result = mysqli_query($db, $sql);
+            if (mysqli_num_rows($result) > 0) {
+            while($row = mysqli_fetch_assoc($result)) {
+            $query6=mysqli_query($db,"SELECT * FROM user WHERE email = '".$row['email']."'")or die(mysqli_error());
+            $row2=mysqli_fetch_array($query6);
             ?>
-            <div class="project-tab" style="background-color: white;">
-                <div class="project-container2">
-                    <div class="project-info">
-                        <img src="assets/pfp/<?php echo $row2['pfp'];?>" class="image-post">
-                        <h1><?php echo $row['title']; echo "<br />";?>
-                        <p><?php  echo $row['sort_job']; echo" • $"; echo  $row['min_salary']; echo" - $"; echo  $row['max_salary']; ?> </p>
-                    </div>
-                    <h2><?php echo $row['descr']; ?></h2>
-                    <div class="date_posted">
-                        Posted
-                        <?php $datetime = $row['created'];
-                        echo timeElapsedString($datetime);?>
-                    </div>
-                </div>
+        <div class="project-tab" style="background-color: white;">
+        <div class="project-container2">
+            <div class="project-info">
+                <img src="assets/pfp/<?php echo $row2['pfp'];?>" class="image-post">
+                <h1><?php echo $row['title']; echo "<br />";?>
+                <p><?php  echo $row['sort_job']; echo" • $"; echo  $row['min_salary']; echo" - $"; echo  $row['max_salary']; ?> </p>
             </div>
-            <?php
-            }
+            <h2><?php echo $row['descr']; ?></h2>
+            <div class="date_posted">
+                Posted
+                <?php $datetime = $row['created'];
+                echo timeElapsedString($datetime);?>
+            </div>
+        </div>
+    </div>
+    <?php
+    }
+    } else {
+    echo "No results found.";
+    }
+    mysqli_close($db);
             ?>
         </div>
         <div class="col-sm-3">
