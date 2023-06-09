@@ -1,6 +1,7 @@
 <?php
 require('db.php'); 
 
+error_reporting(0);
 ?>
 <link rel="shortcut icon" href="assets/img/logo_klein.png" type="image/x-icon">
 <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css">
