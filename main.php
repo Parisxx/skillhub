@@ -3,7 +3,7 @@ require('initialize.php');
 require('auth.php'); 
 
 $query2=mysqli_query($db,"SELECT * FROM project_post ORDER BY created DESC")or die(mysqli_error());
-$row69=mysqli_fetch_array($query2);
+$row4=mysqli_fetch_array($query2);
 
 $query3=mysqli_query($db,"SELECT * FROM user WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
 $row3=mysqli_fetch_array($query3);
