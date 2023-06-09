@@ -8,21 +8,47 @@ $row2=mysqli_fetch_array($query1);
 $query2=mysqli_query($db,"SELECT * FROM work WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
 
 
-
-
-
-
 if (isset($_POST['submit'])) {
+    // Retrieve form inputs
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
     $work = $_POST['work'];
     $year_xp = $_POST['year_xp'];
     $email = $_SESSION['email'];
 
+    // Construct the update query dynamically based on the provided inputs
+    $updateFields = array();
+    if (!empty($firstname)) {
+        $updateFields[] = "firstname = '$firstname'";
+    }
+    if (!empty($lastname)) {
+        $updateFields[] = "lastname = '$lastname'";
+    }
+    if (!empty($work)) {
+        $updateFields[] = "work = '$work'";
+    }
+    if (!empty($year_xp)) {
+        $updateFields[] = "year_xp = '$year_xp'";
+    }
 
-    $sql = "UPDATE user SET firstname = '$firstname', lastname = '$lastname', work = '$work', year_xp = '$year_xp' WHERE email = '$email'";
+    // Check if any input field is updated
+    if (empty($updateFields)) {
+        echo "Please provide at least one value to update.";
+    } else {
+        // Construct the update query
+        $updateQuery = "UPDATE user SET " . implode(", ", $updateFields) . " WHERE email = '$email'";
 
+        // Execute the update query
+        if (mysqli_query($db, $updateQuery)) {
+            header("Refresh:0");
+        } else {
+            echo "Error updating profile: " . mysqli_error($db);
+        }
+    }
+
+    mysqli_close($db);
 }
+
 
 ?>
 
@@ -65,20 +91,19 @@ if (isset($_POST['submit'])) {
                 <i class="fa-light fa-pen-to-square"></i>
             </label>
         </div>
-<img src="assets/pfp/<?= $row2['pfp']; ?>" id="image-change" class="profile_image_two">
-
+        <img src="assets/pfp/<?= $row2['pfp']; ?>" id="image-change" class="profile_image_two">
+        <input id="edit_two" type="submit" value="Save profile picture" name="upload" class="btn btn-primary">
     </div>
-    <input type="submit" value="Save profile picture" name="upload" class="btn btn-primary">
 </form>
 
-<form action="" method="post" enctype="multipart/form-data">
+<form action="profile_edit.php" method="post" enctype="multipart/form-data">
     <input class="profile_text_edit" type="text" name="firstname" placeholder=" <?php echo $row2['firstname'];?>">
     <input class="profile_text_edit_two" type="text" name="lastname" placeholder=" <?php echo $row2['lastname'];?>">
     <input class="profile_text_small_edit" type="text" name="work" placeholder=" <?php echo $row2['work'];?>">
     <input class="profile_text_small_edit_two" type="text" name="year_xp" placeholder=" <?php echo $row2['year_xp'];?> year(s) of experience ">
     <input id="edit" type="submit" value="Save profile" name="submit" class="btn btn-primary">
-
 </form>
+
 </div>
 
 <div class="about_container">

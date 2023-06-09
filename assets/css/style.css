@@ -493,10 +493,29 @@ body {
     top: 26%;
     border: none;
     outline: none;
+    width: auto;
 }
 
 ::placeholder {
     color: rgb(0, 0, 0);
     font-size: 16px;
 
-  }
+
+}
+
+#edit_two{
+    position: absolute;
+    left: 5%;
+    top: 30%;
+}
+
+.profile_text_edit::placeholder{
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 25px;
+}
+.profile_text_edit_two::placeholder{
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 25px;
+}
