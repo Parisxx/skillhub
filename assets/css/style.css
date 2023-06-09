@@ -456,19 +456,23 @@ body {
 
 .profile_text_edit_two{
     position: absolute;
-    left: 30%;
-    top: 18%;
+    left: 25.5%;
+    top: 19%;
     border: none;
     outline: none;
+    width:auto; 
+    height:50px; 
 
 }
 
 .profile_text_edit{
     position: absolute;
-    left: 20%;
-    top: 18%;
+    left: 19%;
+    top: 19%;
     border: none;
     outline: none;
+    width:auto; 
+    height:50px; 
 }
 
 #button_profile_text{
@@ -477,6 +481,8 @@ body {
     top: 18%;
     border: none;
     outline: none;
+    width:auto; 
+    height:auto; 
 }
 
 .profile_text_small_edit{
@@ -485,15 +491,19 @@ body {
     top: 26%;
     border: none;
     outline: none;
+    width:auto; 
+    height:auto; 
 }
 
 .profile_text_small_edit_two{
     position: absolute;
-    left: 30%;
+    left: 25%;
     top: 26%;
     border: none;
     outline: none;
     width: auto;
+    width:30%; 
+    height:auto; 
 }
 
 ::placeholder {
@@ -510,12 +520,13 @@ body {
 }
 
 .profile_text_edit::placeholder{
-    font-weight: bold;
+    font-weight: 600;
     text-transform: capitalize;
-    font-size: 25px;
+    font-size: 40px;
 }
 .profile_text_edit_two::placeholder{
-    font-weight: bold;
+    font-weight: 600;
     text-transform: capitalize;
-    font-size: 25px;
+    font-size: 40px;
 }
+

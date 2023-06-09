@@ -92,14 +92,14 @@ if (isset($_POST['submit'])) {
             </label>
         </div>
         <img src="assets/pfp/<?= $row2['pfp']; ?>" id="image-change" class="profile_image_two">
-        <input id="edit_two" type="submit" value="Save profile picture" name="upload" class="btn btn-primary">
+        <input id="edit_two" type="submit" value="Save picture" name="upload" class="btn btn-primary">
     </div>
 </form>
 
 <form action="profile_edit.php" method="post" enctype="multipart/form-data">
     <input class="profile_text_edit" type="text" name="firstname" placeholder=" <?php echo $row2['firstname'];?>">
     <input class="profile_text_edit_two" type="text" name="lastname" placeholder=" <?php echo $row2['lastname'];?>">
-    <input class="profile_text_small_edit" type="text" name="work" placeholder=" <?php echo $row2['work'];?>">
+    <input class="profile_text_small_edit" type="text" name="work" placeholder=" <?php echo $row2['work'];?> -">
     <input class="profile_text_small_edit_two" type="text" name="year_xp" placeholder=" <?php echo $row2['year_xp'];?> year(s) of experience ">
     <input id="edit" type="submit" value="Save profile" name="submit" class="btn btn-primary">
 </form>
