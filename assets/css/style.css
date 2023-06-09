@@ -273,10 +273,10 @@ body {
 }
   
 .min-max span {
-    font-size: 10px;
+    font-size: 13px;
     text-align: center;
     display: inline-block;
-    width: 30px;
+    width: 40px;
     border: 1px solid #dedede;    
     border-radius: 5px;
 }
