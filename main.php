@@ -60,6 +60,32 @@ function timeElapsedString($datetime, $full = false) {
     if (!$full) $string = array_slice($string, 0, 1);
     return $string ? implode(', ', $string) . ' ago' : 'just now';
 }
+
+$page_num = 1;
+$page_limit = 5;
+
+if(isset($_GET['page'])){
+    // Checking that it is a valid number
+    $page_num = filter_var($_GET['page'], FILTER_VALIDATE_INT,[
+        'options' => [
+            'default' => 1,
+            'min_range' => 1
+        ]
+    ]);
+}
+
+$page_offset = $page_limit * ($page_num - 1);
+
+// $query = mysqli_query($db,"SELECT * FROM `user` ORDER BY userid LIMIT $page_limit OFFSET $page_offset");
+$total_posts = mysqli_num_rows(mysqli_query($db,"SELECT * FROM `project_post`"));
+$total_page = ceil($total_posts / $page_limit);
+$next_page = $page_num+1; 
+$prev_page = $page_num-1; 
+
+if($total_page < $page_num){
+    header('Location: '.$_SERVER['PHP_SELF']);
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -140,7 +166,6 @@ function timeElapsedString($datetime, $full = false) {
         <div class="col-sm-5">
             <div class="project-tab">
                 <div class="project-container">
-
                     <h1>Are you looking for a dream job?</h1>
                     <h2>Skillhub is a place where you can find your dream job in various skills.<br>More than 10.000 jobs are available here.</h2>
                     <div class="search">
@@ -152,7 +177,7 @@ function timeElapsedString($datetime, $full = false) {
                 </div>
             </div>
             <?php
-            $sql = "SELECT * FROM project_post WHERE title LIKE '%$search%' OR descr LIKE '%$search%' ORDER BY created DESC";
+            $sql = "SELECT * FROM project_post WHERE title LIKE '%$search%' OR descr LIKE '%$search%' ORDER BY created DESC LIMIT $page_limit OFFSET $page_offset";
             $result = mysqli_query($db, $sql);
             if (mysqli_num_rows($result) > 0) {
             while($row = mysqli_fetch_assoc($result)) {
@@ -181,6 +206,25 @@ function timeElapsedString($datetime, $full = false) {
     }
     mysqli_close($db);
             ?>
+                <ul class="pagination">
+        <?php
+            if($page_num > 1):
+                echo '<li><a href="?page='.$prev_page.'" class="page_link"><i class="fa-solid fa-angle-left"></i></a></li>';
+            endif;
+
+            for($i = 1; $i <= $total_page; $i++):
+                if($i == $page_num){
+                    echo '<li><span>'.$i.'</span></li>';
+                }else{
+                    echo '<li><a href="?page='.$i.'">'.$i.'</a></li>';
+                }
+            endfor;
+
+            if($total_page+1 != $next_page):
+                echo '<li><a href="?page='.$next_page.'" class="page_link"><i class="fa-solid fa-angle-right"></i></a></li>';
+            endif;
+        ?>
+    </ul>
         </div>
         <div class="col-sm-3">
             <div class="user-tab">

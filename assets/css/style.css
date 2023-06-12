@@ -320,6 +320,40 @@ body {
     cursor: pointer;
 }
 
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-top: 40px;
+}
+
+.pagination a,
+.pagination span {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin: 3px;
+    text-decoration: none;
+    outline: none;
+    color: inherit;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination a:hover,
+.pagination span {
+    background-color: #AB7FBC;
+    color: #ffffff;
+    text-align: center;
+}
+
+.pagination_next i {
+    font-size: 20px;
+}
+
 /* END PROJECT TAB */
 
 /* BEGIN PROFILE TAB*/
