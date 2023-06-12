@@ -486,7 +486,7 @@ body {
   font-size: 26px;
 }
 
-
+/* profile edit text */
 
 .profile_text_edit_two{
     position: absolute;
@@ -564,3 +564,20 @@ body {
     font-size: 40px;
 }
 
+
+
+input.profile_text_edit[type="text"]{
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 40px;
+}
+
+input.profile_text_edit_two[type="text"]{
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 40px;
+}
+
+.label{
+    display: inline-block;
+}
