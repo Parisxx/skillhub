@@ -29,9 +29,9 @@ if(isset($_POST['submit'])){
     }
 }
 $search = $_POST['search'];
-if(isset($_POST['search'])){
-    header("Location: ?search=$search");
-}
+// if(isset($_POST['search'])){
+//     header("Location: ?search=$search");
+// }
 
 function timeElapsedString($datetime, $full = false) {
     $now = new DateTime;
