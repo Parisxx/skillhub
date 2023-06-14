@@ -38,7 +38,7 @@ and password='".md5($password)."'";
           <div class="card-body p-5 text-center">
             <div class="mb-md-5 mt-md-4 pb-5">
               <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
-              <p class="text-white-50 mb-5">Please enter your login and password!</p>
+              <p class="text-white-50 mb-5">Please enter your Email and Password!</p>
 
               <form method="post">
                 <div class="form-row">
@@ -52,7 +52,7 @@ and password='".md5($password)."'";
                 <input id="button" class="btn btn-primary" name="submit" type="submit" value="Login" name="submit">
 
               </form>
-              <p>Don't have an account yet? <a href="register.php">Register here!</a></p>
+              <p>Dont have an account yet? <a href="register.php">Register here!</a></p>
             </div>
           </div>
         </div>
