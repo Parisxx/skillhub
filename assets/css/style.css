@@ -346,7 +346,7 @@ body {
 .pagination a:hover,
 .pagination span {
     background-color: #AB7FBC;
-    color: #ffffff;
+    color: white;
     text-align: center;
 }
 

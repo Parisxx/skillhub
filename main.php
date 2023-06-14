@@ -28,9 +28,10 @@ if(isset($_POST['submit'])){
         header('Location: main.php'); 
     }
 }
-
 $search = $_POST['search'];
-
+if(isset($_POST['search'])){
+    header("Location: ?search=$search");
+}
 
 function timeElapsedString($datetime, $full = false) {
     $now = new DateTime;
@@ -65,7 +66,6 @@ $page_num = 1;
 $page_limit = 5;
 
 if(isset($_GET['page'])){
-    // Checking that it is a valid number
     $page_num = filter_var($_GET['page'], FILTER_VALIDATE_INT,[
         'options' => [
             'default' => 1,
@@ -75,8 +75,6 @@ if(isset($_GET['page'])){
 }
 
 $page_offset = $page_limit * ($page_num - 1);
-
-// $query = mysqli_query($db,"SELECT * FROM `user` ORDER BY userid LIMIT $page_limit OFFSET $page_offset");
 $total_posts = mysqli_num_rows(mysqli_query($db,"SELECT * FROM `project_post`"));
 $total_page = ceil($total_posts / $page_limit);
 $next_page = $page_num+1; 
@@ -84,7 +82,6 @@ $prev_page = $page_num-1;
 
 if($total_page < $page_num){
     header('Location: '.$_SERVER['PHP_SELF']);
-    exit;
 }
 ?>
 
@@ -237,22 +234,5 @@ if($total_page < $page_num){
         </div>
     </div>
 </body>
-<script>
-var minSlider = document.getElementById('min');
-var maxSlider = document.getElementById('max');
-
-var outputMin = document.getElementById('min-value');
-var outputMax = document.getElementById('max-value');
-
-outputMin.innerHTML = minSlider.value;
-outputMax.innerHTML = maxSlider.value;
-
-minSlider.oninput = function(){
- outputMin.innerHTML=this.value;    
-}
-
-maxSlider.oninput = function(){
- outputMax.innerHTML=this.value;    
-}
-</script>
+<script src="assets/js/slider.js"></script>
 </html>
