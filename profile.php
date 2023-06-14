@@ -39,8 +39,29 @@ $query2=mysqli_query($db,"SELECT * FROM work WHERE email = '".$_SESSION['email']
         </div>
         <div class="nav-info">
             <i class="fa-light fa-bell"></i>
-            <a href="profile.php"><img src="assets/pfp/<?php echo $row2['pfp'];?>" class="image"></a>
+            <img src="assets/pfp/<?php echo $row2['pfp'];?>" class="image" onclick="toggleMenu()">
         </div>
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+               <a href="profile.php" class="sub-menu-link" id="first-link">
+                  <p><i class="fa-light fa-user"></i> Profile</p>
+               </a>
+               <a href="" class="sub-menu-link">
+                  <p><i class="fa-light fa-bookmark"></i> Saved</p>
+               </a>
+               <a href="" class="sub-menu-link">
+                  <p><i class="fa-light fa-gear"></i> Settings</p>
+               </a>
+               <hr>
+               <a href="" class="sub-menu-link">
+                  <p><i class="fa-light fa-circle-question"></i> Help Center</p>
+               </a>
+               <hr>
+               <a href="logout.php" class="sub-menu-link">
+                  <p><i class="fa-light fa-right-from-bracket"></i> Logout</p>
+               </a>
+            </div>
+         </div>
     </div>
 
 <!-- profile -->
@@ -95,4 +116,5 @@ $query2=mysqli_query($db,"SELECT * FROM work WHERE email = '".$_SESSION['email']
 
 
 </body>
+<script src="assets/js/usermenu.js"></script>
 </html>

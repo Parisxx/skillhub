@@ -14,6 +14,7 @@ body {
     width: 50px;
     object-fit: contain;
     border-radius: 100%; 
+    cursor: pointer;
 }
 
 .nav {
@@ -42,6 +43,7 @@ body {
     position: absolute;
     right: 20;
     height: 100%;
+    width: auto;
 }
 
 .nav-info i {
@@ -354,6 +356,54 @@ body {
     font-size: 20px;
 }
 
+.sub-menu-wrap {
+    position: absolute;
+    top: 100%;
+    right: 2%;
+    width: 300px;
+    max-height: 0px;
+    transition: max-height 0.4s;
+    overflow: hidden;
+}
+
+.sub-menu-wrap.open-menu {
+    max-height: 400px;
+}
+
+.sub-menu {
+    background: white;
+    border: 1px solid #dedede;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.sub-menu hr {
+    margin-top: 0;
+}
+
+.sub-menu-link {
+    display: flex;
+    text-decoration: none;
+    color: black;
+}
+
+.sub-menu-link:hover p, .sub-menu-link:hover i {
+    color: black;
+    font-weight: 600;
+}
+
+#first-link {
+    margin-top: 10px;
+}
+
+.sub-menu-link p {
+    padding-left: 1.5rem;
+}
+
+.sub-menu-link i {
+    padding-right: 12px;
+    color: #676565;
+}
 /* END PROJECT TAB */
 
 /* BEGIN PROFILE TAB*/

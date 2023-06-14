@@ -5,8 +5,6 @@ require('auth.php');
 $query3=mysqli_query($db,"SELECT * FROM user WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
 $row3=mysqli_fetch_array($query3);
 
-
-
 if(isset($_POST['submit'])){
 
     $email = $_SESSION['email'];
@@ -92,6 +90,10 @@ if($total_page < $page_num){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <title>Skillhub | Home</title>
 </head>
 <body>
@@ -106,8 +108,29 @@ if($total_page < $page_num){
         <div class="nav-info">
             <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="test"><i class="fa-light fa-plus"></i></a>
             <i class="fa-light fa-bell"></i>
-            <a href="profile.php"><img src="assets/pfp/<?php echo $row3['pfp'];?>" class="image"></a>
+            <img src="assets/pfp/<?php echo $row3['pfp'];?>" class="image" onclick="toggleMenu()">
         </div>
+            <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+               <a href="profile.php" class="sub-menu-link" id="first-link">
+                  <p><i class="fa-light fa-user"></i> Profile</p>
+               </a>
+               <a href="" class="sub-menu-link">
+                  <p><i class="fa-light fa-bookmark"></i> Saved</p>
+               </a>
+               <a href="" class="sub-menu-link">
+                  <p><i class="fa-light fa-gear"></i> Settings</p>
+               </a>
+               <hr>
+               <a href="" class="sub-menu-link">
+                  <p><i class="fa-light fa-circle-question"></i> Help Center</p>
+               </a>
+               <hr>
+               <a href="logout.php" class="sub-menu-link">
+                  <p><i class="fa-light fa-right-from-bracket"></i> Logout</p>
+               </a>
+            </div>
+         </div>
     </div>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" is-active>
@@ -235,4 +258,5 @@ if($total_page < $page_num){
     </div>
 </body>
 <script src="assets/js/slider.js"></script>
+<script src="assets/js/usermenu.js"></script>
 </html>
