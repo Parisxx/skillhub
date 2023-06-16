@@ -11,7 +11,7 @@ $row2=mysqli_fetch_array($query2);
 $query3=mysqli_query($db,"SELECT * FROM user WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
 $row3=mysqli_fetch_array($query3);
 
-$query4=mysqli_query($db,"SELECT * FROM work WHERE email = '$email'")or die(mysqli_error());
+$query4=mysqli_query($db,"SELECT * FROM work WHERE email = '".$row['email']."'")or die(mysqli_error());
 $row4=mysqli_fetch_array($query4);
 
 ?>
@@ -26,40 +26,7 @@ $row4=mysqli_fetch_array($query4);
 </head>
 <body>
 <!-- navbar -->
-    <div class="nav">
-        <div class="nav-logo">
-            <a href="main.php"><img class="logo" src="assets/img/logo.png"></a>
-        </div>
-        <div class="nav-links">
-            <a href="main.php" class="btn btn-link text-decoration-none">Find Projects</a>
-            <a href="freelancer.php" class="btn btn-link text-decoration-none">Find Freelancers</a>
-        </div>
-        <div class="nav-info">
-            <i class="fa-light fa-bell"></i>
-            <img src="assets/pfp/<?php echo $row3['pfp'];?>" class="image" onclick="toggleMenu()">
-        </div>
-        <div class="sub-menu-wrap" id="subMenu">
-            <div class="sub-menu">
-               <a href="<?php echo $row3['username']; ?>" class="sub-menu-link" id="first-link">
-                  <p><i class="fa-light fa-user"></i> Profile</p>
-               </a>
-               <a href="" class="sub-menu-link">
-                  <p><i class="fa-light fa-bookmark"></i> Saved</p>
-               </a>
-               <a href="" class="sub-menu-link">
-                  <p><i class="fa-light fa-gear"></i> Settings</p>
-               </a>
-               <hr>
-               <a href="" class="sub-menu-link">
-                  <p><i class="fa-light fa-circle-question"></i> Help Center</p>
-               </a>
-               <hr>
-               <a href="logout.php" class="sub-menu-link">
-                  <p><i class="fa-light fa-right-from-bracket"></i> Logout</p>
-               </a>
-            </div>
-         </div>
-    </div>
+<?php require "include/navbar.php" ?>
 
 <?php
 if (mysqli_num_rows($query2) > 0) {
@@ -87,8 +54,9 @@ if (mysqli_num_rows($query2) > 0) {
 <div class="skill_container_one">
 
 <h4>Skills</h4>
-<?php while ($row = mysqli_fetch_array($query4)) { ?>
-<p class="skill"> <?php echo $row['skills'];?> </p>
+<?php while ($row = mysqli_fetch_array($query2)) { 
+   ?>
+<p class="skill"> <?php echo $row4['skills'];?> </p>
 <?php } ?>
 <h4>Location</h4>
 <p> <?php echo $row2['location'];?> </p>
@@ -102,8 +70,8 @@ if (mysqli_num_rows($query2) > 0) {
 <h3> Work experience </h3>
 
 
-<?php mysqli_data_seek($query4, 0); ?>
-<?php while ($row = mysqli_fetch_array($query4)) { ?>
+<?php mysqli_data_seek($query2, 0); ?>
+<?php while ($row = mysqli_fetch_array($query2)) { ?>
 <img class="work_logo" src="assets/pfp/<?php echo $row['work_pf'];?>">
 <h5> <?php echo $row['work_info'];?> </h5>
 <h6> <?php echo $row['work_co'];?> </h6>

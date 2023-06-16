@@ -5,6 +5,9 @@ require('auth.php');
 $query1=mysqli_query($db,"SELECT * FROM user WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
 $row2=mysqli_fetch_array($query1);
 
+$query3=mysqli_query($db,"SELECT * FROM user WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
+$row3=mysqli_fetch_array($query3);
+
 $query2=mysqli_query($db,"SELECT * FROM work WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
 
 
@@ -65,40 +68,7 @@ if (isset($_POST['submit'])) {
 </head>
 <body>
 <!-- navbar -->
-<div class="nav">
-        <div class="nav-logo">
-            <a href="main.php"><img class="logo" src="assets/img/logo.png"></a>
-        </div>
-        <div class="nav-links">
-            <a href="main.php" class="btn btn-link text-decoration-none">Find Projects</a>
-            <a href="freelancer.php" class="btn btn-link text-decoration-none">Find Freelancers</a>
-        </div>
-        <div class="nav-info">
-            <i class="fa-light fa-bell"></i>
-            <img src="assets/pfp/<?php echo $row2['pfp'];?>" class="image" onclick="toggleMenu()">
-        </div>
-        <div class="sub-menu-wrap" id="subMenu">
-            <div class="sub-menu">
-               <a href="<?php echo $row2['username']; ?>" class="sub-menu-link" id="first-link">
-                  <p><i class="fa-light fa-user"></i> Profile</p>
-               </a>
-               <a href="" class="sub-menu-link">
-                  <p><i class="fa-light fa-bookmark"></i> Saved</p>
-               </a>
-               <a href="" class="sub-menu-link">
-                  <p><i class="fa-light fa-gear"></i> Settings</p>
-               </a>
-               <hr>
-               <a href="" class="sub-menu-link">
-                  <p><i class="fa-light fa-circle-question"></i> Help Center</p>
-               </a>
-               <hr>
-               <a href="logout.php" class="sub-menu-link">
-                  <p><i class="fa-light fa-right-from-bracket"></i> Logout</p>
-               </a>
-            </div>
-         </div>
-    </div>
+<?php require "include/navbar.php" ?>
 
 <!-- profile -->
 <div class="profile_container">
