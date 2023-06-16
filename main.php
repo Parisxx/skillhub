@@ -209,7 +209,7 @@ if($total_page < $page_num){
             <div class="project-tab">
                 <div class="project-container">
                     <h1>Are you looking for a dream job?</h1>
-                    <h2>Skillhub is a place where you can find your dream job in various skills.<br>More than 10.000 jobs are available here.</h2>
+                    <h2>Skillhub is a place where you can find your dream job in various skills. More than 10.000 jobs are available here.</h2>
                     <div class="search">
                         <form method="post">
                             <input type="text" class="form-control" name="search" placeholder="Search your dream job here">
