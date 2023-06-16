@@ -5,6 +5,9 @@ require('auth.php');
 $query3=mysqli_query($db,"SELECT * FROM user WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
 $row3=mysqli_fetch_array($query3);
 
+$query4=mysqli_query($db,"SELECT * FROM user")or die(mysqli_error());
+$row4=mysqli_fetch_array($query4);
+
 if(isset($_POST['submit'])){
 
     $email = $_SESSION['email'];
@@ -204,11 +207,11 @@ if($total_page < $page_num){
             $query6=mysqli_query($db,"SELECT * FROM user WHERE email = '".$row['email']."'")or die(mysqli_error());
             $row2=mysqli_fetch_array($query6);
             ?>
-        <div class="project-tab" style="background-color: white;">
+    <div class="project-tab" style="background-color: white;">
         <div class="project-container2">
             <div class="project-info">
                 <img src="assets/pfp/<?php echo $row2['pfp'];?>" class="image-post">
-                <h1><?php echo $row['title']; echo "<br />";?>
+                <a href="<?php echo $row2['username']; ?>"><h1><?php echo $row['title']; echo "<br />";?></a>
                 <p><?php  echo $row['sort_job']; echo" • $"; echo  $row['min_salary']; echo" - $"; echo  $row['max_salary']; ?> </p>
             </div>
             <h2><?php echo $row['descr']; ?></h2>

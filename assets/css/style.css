@@ -176,6 +176,11 @@ body {
     font-size: 17px;
 }
 
+.project-info a {
+    text-decoration: none;
+    color: black;
+}
+
 .project-container2 h2 {
     font-size: 15px;
     margin-bottom: 15px;

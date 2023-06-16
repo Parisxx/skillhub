@@ -2,22 +2,19 @@
 require('initialize.php');
 require('auth.php'); 
 
-$query1=mysqli_query($db,"SELECT * FROM user WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
-$row2=mysqli_fetch_array($query1);
+$username = $_GET['username'];
+$skills = $_GET['skills'];
 
-$query2=mysqli_query($db,"SELECT * FROM work WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
-// $row3=mysqli_fetch_array($query2);
+$query2=mysqli_query($db,"SELECT * FROM user WHERE username = '$username'")or die(mysqli_error());
+$row2=mysqli_fetch_array($query2);
 
+$query3=mysqli_query($db,"SELECT * FROM user WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
+$row3=mysqli_fetch_array($query3);
 
-
-
-
-
+$query4=mysqli_query($db,"SELECT * FROM work WHERE skills = '$skills'")or die(mysqli_error());
+$row4=mysqli_fetch_array($query4);
 
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +36,7 @@ $query2=mysqli_query($db,"SELECT * FROM work WHERE email = '".$_SESSION['email']
         </div>
         <div class="nav-info">
             <i class="fa-light fa-bell"></i>
-            <img src="assets/pfp/<?php echo $row2['pfp'];?>" class="image" onclick="toggleMenu()">
+            <img src="assets/pfp/<?php echo $row3['pfp'];?>" class="image" onclick="toggleMenu()">
         </div>
         <div class="sub-menu-wrap" id="subMenu">
             <div class="sub-menu">
@@ -72,7 +69,6 @@ $query2=mysqli_query($db,"SELECT * FROM work WHERE email = '".$_SESSION['email']
 <a href="profile_edit.php"><button id="edit" class="btn btn-primary">Edit Profile</button></a>
 </div>
 
-
 <div class="about_container">
 <h1>Experience</h1>
 <p> <?php echo $row2['xp'];?> </p>
@@ -87,8 +83,8 @@ $query2=mysqli_query($db,"SELECT * FROM work WHERE email = '".$_SESSION['email']
 <div class="skill_container_one">
 
 <h4>Skills</h4>
-<?php while ($row3 = mysqli_fetch_array($query2)) { ?>
-<p class="skill"> <?php echo $row3['skills'];?> </p>
+<?php while ($row = mysqli_fetch_array($query4)) { ?>
+<p class="skill"> <?php echo $row['skills'];?> </p>
 <?php } ?>
 <h4>Location</h4>
 <p> <?php echo $row2['location'];?> </p>
@@ -102,12 +98,12 @@ $query2=mysqli_query($db,"SELECT * FROM work WHERE email = '".$_SESSION['email']
 <h3> Work experience </h3>
 
 
-<?php mysqli_data_seek($query2, 0); ?>
-<?php while ($row3 = mysqli_fetch_array($query2)) { ?>
-<img class="work_logo" src="assets/pfp/<?php echo $row3['work_pf'];?>">
-<h5> <?php echo $row3['work_info'];?> </h5>
-<h6> <?php echo $row3['work_co'];?> </h6>
-<p> <?php echo $row3['work_xp'];?> year(s) </p>
+<?php mysqli_data_seek($query4, 0); ?>
+<?php while ($row = mysqli_fetch_array($query4)) { ?>
+<img class="work_logo" src="assets/pfp/<?php echo $row['work_pf'];?>">
+<h5> <?php echo $row['work_info'];?> </h5>
+<h6> <?php echo $row['work_co'];?> </h6>
+<p> <?php echo $row['work_xp'];?> year(s) </p>
 <?php } ?>
 </div>
 
