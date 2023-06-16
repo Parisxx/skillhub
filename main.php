@@ -5,9 +5,6 @@ require('auth.php');
 $query3=mysqli_query($db,"SELECT * FROM user WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
 $row3=mysqli_fetch_array($query3);
 
-$query4=mysqli_query($db,"SELECT * FROM user")or die(mysqli_error());
-$row4=mysqli_fetch_array($query4);
-
 if(isset($_POST['submit'])){
 
     $email = $_SESSION['email'];
@@ -115,7 +112,7 @@ if($total_page < $page_num){
         </div>
             <div class="sub-menu-wrap" id="subMenu">
             <div class="sub-menu">
-               <a href="profile.php" class="sub-menu-link" id="first-link">
+               <a href="<?php echo $row3['username']; ?>" class="sub-menu-link" id="first-link">
                   <p><i class="fa-light fa-user"></i> Profile</p>
                </a>
                <a href="" class="sub-menu-link">
@@ -210,7 +207,7 @@ if($total_page < $page_num){
     <div class="project-tab" style="background-color: white;">
         <div class="project-container2">
             <div class="project-info">
-                <img src="assets/pfp/<?php echo $row2['pfp'];?>" class="image-post">
+                <a href="<?php echo $row2['username']; ?>"><img src="assets/pfp/<?php echo $row2['pfp'];?>" class="image-post"></a>
                 <a href="<?php echo $row2['username']; ?>"><h1><?php echo $row['title']; echo "<br />";?></a>
                 <p><?php  echo $row['sort_job']; echo" • $"; echo  $row['min_salary']; echo" - $"; echo  $row['max_salary']; ?> </p>
             </div>

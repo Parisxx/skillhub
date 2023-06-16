@@ -3,7 +3,7 @@ require('initialize.php');
 require('auth.php'); 
 
 $username = $_GET['username'];
-$skills = $_GET['skills'];
+$email = $_GET['email'];
 
 $query2=mysqli_query($db,"SELECT * FROM user WHERE username = '$username'")or die(mysqli_error());
 $row2=mysqli_fetch_array($query2);
@@ -11,7 +11,7 @@ $row2=mysqli_fetch_array($query2);
 $query3=mysqli_query($db,"SELECT * FROM user WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
 $row3=mysqli_fetch_array($query3);
 
-$query4=mysqli_query($db,"SELECT * FROM work WHERE skills = '$skills'")or die(mysqli_error());
+$query4=mysqli_query($db,"SELECT * FROM work WHERE email = '$email'")or die(mysqli_error());
 $row4=mysqli_fetch_array($query4);
 
 ?>
@@ -40,7 +40,7 @@ $row4=mysqli_fetch_array($query4);
         </div>
         <div class="sub-menu-wrap" id="subMenu">
             <div class="sub-menu">
-               <a href="profile.php" class="sub-menu-link" id="first-link">
+               <a href="<?php echo $row3['username']; ?>" class="sub-menu-link" id="first-link">
                   <p><i class="fa-light fa-user"></i> Profile</p>
                </a>
                <a href="" class="sub-menu-link">
@@ -60,6 +60,10 @@ $row4=mysqli_fetch_array($query4);
             </div>
          </div>
     </div>
+
+<?php
+if (mysqli_num_rows($query2) > 0) {
+?>
 
 <!-- profile -->
 <div class="profile_container">
@@ -107,7 +111,11 @@ $row4=mysqli_fetch_array($query4);
 <?php } ?>
 </div>
 
-
+<?php
+} else {
+  header('location: 404.php');
+}
+?>
 
 
 
