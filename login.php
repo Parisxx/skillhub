@@ -10,12 +10,16 @@ and password='".md5($password)."'";
     $rows = mysqli_num_rows($result);
         if($rows==1){
         $_SESSION['email'] = $email;
+        $_SESSION['loggedIn'] = true;
         header("Location: main.php");
          }else{
     echo "Email/password is incorrect.";
     }
 }
 
+if (isset($_SESSION["loggedIn"])) {
+  header("location: main.php");
+}
 ?>
 
 <!DOCTYPE html>

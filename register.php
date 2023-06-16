@@ -38,6 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (mysqli_query($db, $insertUserQuery) && mysqli_query($db, $insertWorkQuery)) {
                 $_SESSION['id'] = mysqli_insert_id($db);
                 $_SESSION['email'] = $email;
+                $_SESSION['loggedIn'] = true;
                 header("Location: login.php");
                 exit();
             } else {
@@ -54,6 +55,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
+if (isset($_SESSION["loggedIn"])) {
+  header("location: main.php");
+}
 ?>
 
 <!DOCTYPE html>
