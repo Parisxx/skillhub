@@ -170,19 +170,19 @@ if($total_page < $page_num){
                 <div class="job-section">
                     <h1>Job Type</h1>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked>
                         <label class="form-check-label" for="defaultCheck1">
                             Fulltime Job
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked>
                         <label class="form-check-label" for="defaultCheck1">
                             Part-time Job
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked>
                         <label class="form-check-label" for="defaultCheck1">
                             Remote
                         </label>
@@ -197,7 +197,7 @@ if($total_page < $page_num){
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
                         <label class="form-check-label" for="flexRadioDefault1">
                             $1000 - $10,000
                         </label>
