@@ -142,7 +142,67 @@ if($total_page < $page_num){
     <div class="maincontainer">
         <div class="col-sm-4">
             <div class="filter-tab">
-                Filter
+                <div class="filter-header">
+                    <h1>Filter</h1>
+                    <p>Clear all</p>
+                </div>
+                <div class="location-section">
+                    <h1>Locations</h1>
+                    <select class="form-select" name="sort_job" aria-label="Default select example" id="select_job" required>
+                    <option value="">Select...</option>
+                    </select>
+                </div>
+                <div class="time-section">
+                    <h1>Latest - Oldest</h1>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Latest
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Oldest
+                        </label>
+                    </div>
+                </div>
+                <div class="job-section">
+                    <h1>Job Type</h1>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Fulltime Job
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Part-time Job
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Remote
+                        </label>
+                    </div>
+                </div>
+                <div class="salary-section">
+                    <h1>Expected Salary</h1>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Under $1000
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            $1000 - $10,000
+                        </label>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col-sm-5">
