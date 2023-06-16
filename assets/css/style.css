@@ -360,7 +360,7 @@ body {
     position: absolute;
     top: 100%;
     right: 2%;
-    width: 300px;
+    width: 280px;
     max-height: 0px;
     transition: max-height 0.4s;
     overflow: hidden;
