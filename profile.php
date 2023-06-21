@@ -2,6 +2,9 @@
 require('initialize.php');
 require('auth.php'); 
 
+session_start();
+
+$emailtest = $_SESSION['email'];
 $username = $_GET['username'];
 $email = $_GET['email'];
 
@@ -37,7 +40,12 @@ if (mysqli_num_rows($query2) > 0) {
     <img src="assets/pfp/<?php echo $row2['pfp'];?>" class="profile_image">
     <h1 class="profile_text_big"> <?php echo $row2['firstname'];?> <?php echo $row2['lastname'];?> </h1>
     <p class="profile_text_small"> <?php echo $row2['work'];?> - <?php echo $row2['year_xp'];?> year(s) of experience </p>
+    <?php if($emailtest == $row2['email']) {?>
     <a href="profile_edit.php"><button id="edit" class="btn btn-primary">Edit Profile</button></a>
+    <?php } else { ?>
+      <a href="profile_edit.php"><button id="edit" class="btn btn-primary">Andere knop</button></a>
+    <?php };?>
+
   </div>
   <div class="about_container">
     <h1>Experience</h1>
