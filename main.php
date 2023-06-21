@@ -12,9 +12,9 @@ if(isset($_POST['submit'])){
 	$title = mysqli_real_escape_string($db,$title);
     $descr = stripslashes($_REQUEST['descr']);
 	$descr = mysqli_real_escape_string($db,$descr); 
-    $sort_job = $_POST['sort_job'];
-    $min_salary = $_POST['minimum'];
-    $max_salary = $_POST['maximum'];
+    $sort_job = mysqli_real_escape_string($db, $_POST['sort_job']);
+    $min_salary = mysqli_real_escape_string($db, $_POST['minimum']);
+    $max_salary = mysqli_real_escape_string($db, $_POST['maximum']);
     $created = date("Y-m-d H:i:s");
 
     $run = "INSERT INTO `project_post` (email, title, descr, sort_job, min_salary, max_salary, created)

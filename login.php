@@ -44,13 +44,19 @@ if (isset($_SESSION["loggedIn"])) {
               <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
               <p class="text-white-50 mb-5">Please enter your Email and Password!</p>
 
-              <form method="post">
+              <form method="post"class="needs-validation" novalidate>
                 <div class="form-row">
-                 <div class="form-group col-md-12 mb-4">
-                 <input name="email"type="email" class="form-control" id="email" placeholder="Email">
+                 <div class="form-group col-md-12 mb-4" has-validation>
+                 <input name="email"type="email" class="form-control" id="email" placeholder="Email" required>
+                 <div class="invalid-feedback">
+                    Please enter an email.
+                </div>
                  </div>
-                 <div class="form-group col-md-12 mb-4  ">
-                 <input name="password" type="password" class="form-control" id="password" placeholder="Password">
+                 <div class="form-group col-md-12 mb-4" has-validation>
+                 <input name="password" type="password" class="form-control" id="password" placeholder="Password" required>
+                 <div class="invalid-feedback">
+                    Please enter a password.
+                </div>
                  </div>
                 </div>
                 <input id="button" class="btn btn-primary" name="submit" type="submit" value="Login" name="submit">
@@ -64,9 +70,7 @@ if (isset($_SESSION["loggedIn"])) {
     </div>
   </div>
 </section>
-
-
-
+<script src="assets/js/boot-val.js"></script>
 </body>
 </html>
 
