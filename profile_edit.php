@@ -5,6 +5,9 @@ require('auth.php');
 $query1=mysqli_query($db,"SELECT * FROM user WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
 $row2=mysqli_fetch_array($query1);
 
+$query3=mysqli_query($db,"SELECT * FROM user WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
+$row3=mysqli_fetch_array($query3);
+
 $query2=mysqli_query($db,"SELECT * FROM work WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
 
 
@@ -64,19 +67,7 @@ if (isset($_POST['submit'])) {
 </head>
 <body>
 <!-- navbar -->
-    <div class="nav">
-        <div class="nav-logo">
-            <a href="main.php"><img class="logo" src="assets/img/logo.png"></a>
-        </div>
-        <div class="nav-links">
-            <a href="main.php" class="btn btn-link text-decoration-none">Find Projects</a>
-            <a href="freelancer.php" class="btn btn-link text-decoration-none">Find Freelancers</a>
-        </div>
-        <div class="nav-info">
-            <i class="fa-light fa-bell"></i>
-            <a href="profile.php"><img src="assets/pfp/<?php echo $row2['pfp'];?>" class="image"></a>
-        </div>
-    </div>
+<?php require "include/navbar.php" ?>
 
 <!-- profile -->
 <div class="profile_container">
@@ -152,6 +143,7 @@ if (isset($_POST['submit'])) {
 
 
 </body>
+<script src="assets/js/usermenu.js"></script>
 <script>
 function readURL(input) {
             if (input.files && input.files[0]) {

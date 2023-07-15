@@ -5,8 +5,6 @@ require('auth.php');
 $query3=mysqli_query($db,"SELECT * FROM user WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
 $row3=mysqli_fetch_array($query3);
 
-
-
 if(isset($_POST['submit'])){
 
     $email = $_SESSION['email'];
@@ -14,9 +12,9 @@ if(isset($_POST['submit'])){
 	$title = mysqli_real_escape_string($db,$title);
     $descr = stripslashes($_REQUEST['descr']);
 	$descr = mysqli_real_escape_string($db,$descr); 
-    $sort_job = $_POST['sort_job'];
-    $min_salary = $_POST['minimum'];
-    $max_salary = $_POST['maximum'];
+    $sort_job = mysqli_real_escape_string($db, $_POST['sort_job']);
+    $min_salary = mysqli_real_escape_string($db, $_POST['minimum']);
+    $max_salary = mysqli_real_escape_string($db, $_POST['maximum']);
     $created = date("Y-m-d H:i:s");
 
     $run = "INSERT INTO `project_post` (email, title, descr, sort_job, min_salary, max_salary, created)
@@ -95,20 +93,7 @@ if($total_page < $page_num){
     <title>Skillhub | Home</title>
 </head>
 <body>
-    <div class="nav">
-        <div class="nav-logo">
-            <a href="main.php"><img class="logo" src="assets/img/logo.png"></a>
-        </div>
-        <div class="nav-links">
-            <a href="" class="btn btn-link text-decoration-none"><div class="active">Find Projects</div></a>
-            <a href="" class="btn btn-link text-decoration-none">Find Freelancers</a>
-        </div>
-        <div class="nav-info">
-            <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="test"><i class="fa-light fa-plus"></i></a>
-            <i class="fa-light fa-bell"></i>
-            <a href="profile.php"><img src="assets/pfp/<?php echo $row3['pfp'];?>" class="image"></a>
-        </div>
-    </div>
+<?php require "include/navbar.php" ?>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" is-active>
   <div class="modal-dialog">
@@ -148,7 +133,7 @@ if($total_page < $page_num){
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary" name="submit">Send message</button>
+        <button type="submit" class="btn btn-primary" name="submit">Send post</button>
         </form>
       </div>
     </div>
@@ -157,14 +142,74 @@ if($total_page < $page_num){
     <div class="maincontainer">
         <div class="col-sm-4">
             <div class="filter-tab">
-                Filter
+                <div class="filter-header">
+                    <h1>Filter</h1>
+                    <p>Clear all</p>
+                </div>
+                <div class="location-section">
+                    <h1>Locations</h1>
+                    <select class="form-select" name="sort_job" aria-label="Default select example" id="select_job" required>
+                    <option value="">Select...</option>
+                    </select>
+                </div>
+                <div class="time-section">
+                    <h1>Latest - Oldest</h1>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Latest
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Oldest
+                        </label>
+                    </div>
+                </div>
+                <div class="job-section">
+                    <h1>Job Type</h1>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked>
+                        <label class="form-check-label" for="defaultCheck1">
+                            Fulltime Job
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked>
+                        <label class="form-check-label" for="defaultCheck1">
+                            Part-time Job
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked>
+                        <label class="form-check-label" for="defaultCheck1">
+                            Remote
+                        </label>
+                    </div>
+                </div>
+                <div class="salary-section">
+                    <h1>Expected Salary</h1>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Under $1000
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            $1000 - $10,000
+                        </label>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col-sm-5">
             <div class="project-tab">
                 <div class="project-container">
                     <h1>Are you looking for a dream job?</h1>
-                    <h2>Skillhub is a place where you can find your dream job in various skills.<br>More than 10.000 jobs are available here.</h2>
+                    <h2>Skillhub is a place where you can find your dream job in various skills. More than 10.000 jobs are available here.</h2>
                     <div class="search">
                         <form method="post">
                             <input type="text" class="form-control" name="search" placeholder="Search your dream job here">
@@ -181,11 +226,11 @@ if($total_page < $page_num){
             $query6=mysqli_query($db,"SELECT * FROM user WHERE email = '".$row['email']."'")or die(mysqli_error());
             $row2=mysqli_fetch_array($query6);
             ?>
-        <div class="project-tab" style="background-color: white;">
+    <div class="project-tab" style="background-color: white;">
         <div class="project-container2">
             <div class="project-info">
-                <img src="assets/pfp/<?php echo $row2['pfp'];?>" class="image-post">
-                <h1><?php echo $row['title']; echo "<br />";?>
+                <a href="<?php echo $row2['username']; ?>"><img src="assets/pfp/<?php echo $row2['pfp'];?>" class="image-post"></a>
+                <a href="<?php echo $row2['username']; ?>"><h1><?php echo $row['title']; echo "<br />";?></a>
                 <p><?php  echo $row['sort_job']; echo" • $"; echo  $row['min_salary']; echo" - $"; echo  $row['max_salary']; ?> </p>
             </div>
             <h2><?php echo $row['descr']; ?></h2>
@@ -235,4 +280,5 @@ if($total_page < $page_num){
     </div>
 </body>
 <script src="assets/js/slider.js"></script>
+<script src="assets/js/usermenu.js"></script>
 </html>

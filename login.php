@@ -10,12 +10,16 @@ and password='".md5($password)."'";
     $rows = mysqli_num_rows($result);
         if($rows==1){
         $_SESSION['email'] = $email;
+        $_SESSION['loggedIn'] = true;
         header("Location: main.php");
          }else{
     echo "Email/password is incorrect.";
     }
 }
 
+if (isset($_SESSION["loggedIn"])) {
+  header("location: main.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +33,6 @@ and password='".md5($password)."'";
 </head>
 <body>
 
-
 <section class="vh-100 gradient-custom">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -38,21 +41,27 @@ and password='".md5($password)."'";
           <div class="card-body p-5 text-center">
             <div class="mb-md-5 mt-md-4 pb-5">
               <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
-              <p class="text-white-50 mb-5">Please enter your login and password!</p>
+              <p class="text-white-50 mb-5">Please enter your Email and Password!</p>
 
-              <form method="post">
+              <form method="post"class="needs-validation" novalidate>
                 <div class="form-row">
-                 <div class="form-group col-md-12 mb-4">
-                 <input name="email"type="email" class="form-control" id="email" placeholder="Email">
+                 <div class="form-group col-md-12 mb-4" has-validation>
+                 <input name="email"type="email" class="form-control" id="email" placeholder="Email" required>
+                 <div class="invalid-feedback">
+                    Please enter an email.
+                </div>
                  </div>
-                 <div class="form-group col-md-12 mb-4  ">
-                 <input name="password" type="password" class="form-control" id="password" placeholder="Password">
+                 <div class="form-group col-md-12 mb-4" has-validation>
+                 <input name="password" type="password" class="form-control" id="password" placeholder="Password" required>
+                 <div class="invalid-feedback">
+                    Please enter a password.
+                </div>
                  </div>
                 </div>
                 <input id="button" class="btn btn-primary" name="submit" type="submit" value="Login" name="submit">
 
               </form>
-              <p>Don't have an account yet? <a href="register.php">Register here!</a></p>
+              <p>Dont have an account yet? <a href="register.php">Register here!</a></p>
             </div>
           </div>
         </div>
@@ -60,9 +69,7 @@ and password='".md5($password)."'";
     </div>
   </div>
 </section>
-
-
-
+<script src="assets/js/boot-val.js"></script>
 </body>
 </html>
 

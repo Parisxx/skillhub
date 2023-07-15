@@ -17,6 +17,7 @@ require('initialize.php');
         <a href="register.php" class="btn btn-link">Register</a>
     </div>
 
+    
 <div class="about">
     <div class="logo">
         <a href="index.php"><img src="assets/img/logo.png"></a>

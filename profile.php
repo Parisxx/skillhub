@@ -2,22 +2,22 @@
 require('initialize.php');
 require('auth.php'); 
 
-$query1=mysqli_query($db,"SELECT * FROM user WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
-$row2=mysqli_fetch_array($query1);
+session_start();
 
-$query2=mysqli_query($db,"SELECT * FROM work WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
-// $row3=mysqli_fetch_array($query2);
+$emailtest = $_SESSION['email'];
+$username = $_GET['username'];
+$email = $_GET['email'];
 
+$query2=mysqli_query($db,"SELECT * FROM user WHERE username = '$username'")or die(mysqli_error());
+$row2=mysqli_fetch_array($query2);
 
+$query3=mysqli_query($db,"SELECT * FROM user WHERE email = '".$_SESSION['email']."'")or die(mysqli_error());
+$row3=mysqli_fetch_array($query3);
 
-
-
-
+$query4=mysqli_query($db,"SELECT * FROM work WHERE email = '".$row['email']."'")or die(mysqli_error());
+$row4=mysqli_fetch_array($query4);
 
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,70 +29,59 @@ $query2=mysqli_query($db,"SELECT * FROM work WHERE email = '".$_SESSION['email']
 </head>
 <body>
 <!-- navbar -->
-    <div class="nav">
-        <div class="nav-logo">
-            <a href="main.php"><img class="logo" src="assets/img/logo.png"></a>
-        </div>
-        <div class="nav-links">
-            <a href="main.php" class="btn btn-link text-decoration-none">Find Projects</a>
-            <a href="freelancer.php" class="btn btn-link text-decoration-none">Find Freelancers</a>
-        </div>
-        <div class="nav-info">
-            <i class="fa-light fa-bell"></i>
-            <a href="profile.php"><img src="assets/pfp/<?php echo $row2['pfp'];?>" class="image"></a>
-        </div>
-    </div>
+<?php require "include/navbar.php" ?>
+
+<?php
+if (mysqli_num_rows($query2) > 0) {
+?>
 
 <!-- profile -->
-<div class="profile_container">
-<img src="assets/pfp/<?php echo $row2['pfp'];?>" class="profile_image">
-<h1 class="profile_text_big"> <?php echo $row2['firstname'];?> <?php echo $row2['lastname'];?> </h1>
-<p class="profile_text_small"> <?php echo $row2['work'];?> - <?php echo $row2['year_xp'];?> year(s) of experience </p>
-<a href="profile_edit.php"><button id="edit" class="btn btn-primary">Edit Profile</button></a>
-</div>
+  <div class="profile_container">
+    <img src="assets/pfp/<?php echo $row2['pfp'];?>" class="profile_image">
+    <h1 class="profile_text_big"> <?php echo $row2['firstname'];?> <?php echo $row2['lastname'];?> </h1>
+    <p class="profile_text_small"> <?php echo $row2['work'];?> - <?php echo $row2['year_xp'];?> year(s) of experience </p>
+    <?php if($emailtest == $row2['email']) {?>
+    <a href="profile_edit.php"><button id="edit" class="btn btn-primary">Edit Profile</button></a>
+    <?php } else { ?>
+      <a href="profile_edit.php"><button id="edit" class="btn btn-primary">Andere knop</button></a>
+    <?php };?>
 
-
-<div class="about_container">
-<h1>Experience</h1>
-<p> <?php echo $row2['xp'];?> </p>
-<hr>
-<h1>About me</h1>
-<p> <?php echo $row2['aboutme'];?> </p>
-</div>
-
-
-
-
-<div class="skill_container_one">
-
-<h4>Skills</h4>
-<?php while ($row3 = mysqli_fetch_array($query2)) { ?>
-<p class="skill"> <?php echo $row3['skills'];?> </p>
-<?php } ?>
-<h4>Location</h4>
-<p> <?php echo $row2['location'];?> </p>
-<h4>Website</h4>
-<a href="https://<?php echo $row2['website'];?>" target="_blank"><?php echo $row2['website'];?></a>
-<h4>E-mail adress</h4>
-<p> <?php echo $row2['email'];?> </p>
-</div>
-
-<div class="skill_container_two">
-<h3> Work experience </h3>
-
-
-<?php mysqli_data_seek($query2, 0); ?>
-<?php while ($row3 = mysqli_fetch_array($query2)) { ?>
-<img class="work_logo" src="assets/pfp/<?php echo $row3['work_pf'];?>">
-<h5> <?php echo $row3['work_info'];?> </h5>
-<h6> <?php echo $row3['work_co'];?> </h6>
-<p> <?php echo $row3['work_xp'];?> year(s) </p>
-<?php } ?>
-</div>
-
-
-
-
-
+  </div>
+  <div class="about_container">
+    <h1>Experience</h1>
+    <p> <?php echo $row2['xp'];?> </p>
+    <hr>
+    <h1>About me</h1>
+    <p> <?php echo $row2['aboutme'];?> </p>
+  </div>
+  <div class="skill_container_one">
+    <h4>Skills</h4>
+    <?php while ($row = mysqli_fetch_array($query2)) { 
+      ?>
+    <p class="skill"> <?php echo $row4['skills'];?> </p>
+    <?php } ?>
+    <h4>Location</h4>
+    <p> <?php echo $row2['location'];?> </p>
+    <h4>Website</h4>
+    <a href="https://<?php echo $row2['website'];?>" target="_blank"><?php echo $row2['website'];?></a>
+    <h4>E-mail adress</h4>
+    <p> <?php echo $row2['email'];?> </p>
+  </div>
+  <div class="skill_container_two">
+    <h3> Work experience </h3>
+    <?php mysqli_data_seek($query2, 0); ?>
+    <?php while ($row = mysqli_fetch_array($query2)) { ?>
+    <img class="work_logo" src="assets/pfp/<?php echo $row['work_pf'];?>">
+    <h5> <?php echo $row['work_info'];?> </h5>
+    <h6> <?php echo $row['work_co'];?> </h6>
+    <p> <?php echo $row['work_xp'];?> year(s) </p>
+    <?php } ?>
+  </div>
+<?php
+} else {
+  header('location: 404.php');
+}
+?>
 </body>
+<script src="assets/js/usermenu.js"></script>
 </html>
