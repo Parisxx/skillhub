@@ -53,7 +53,6 @@ if (isset($_POST['submit'])) {
 ?>
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -98,6 +97,8 @@ if (isset($_POST['submit'])) {
 
 <form action="profile_edit.php" method="post" enctype="multipart/form-data">
     <input class="profile_text_edit" type="text" name="firstname" placeholder=" <?php echo $row2['firstname'];?>">
+
+
     <input class="profile_text_edit_two" type="text" name="lastname" placeholder=" <?php echo $row2['lastname'];?>">
     <input class="profile_text_small_edit" type="text" name="work" placeholder=" <?php echo $row2['work'];?>">
     <label class="label">-</label>
